@@ -1,2 +1,2 @@
 # COMP241Project
-COMP241 Project for Visualizing emotions from song lyrics
+COMP241 Project for Visualizing emotions from songs
