@@ -17,61 +17,71 @@ print ("Values Stored")
 #input_string = input("Input: ")
 input_string = """
 
-It might seem crazy what I'm about to say
-Sunshine she's here, you can take a break
-I'm a hot air balloon that could go to space
-With the air, like I don't care, baby, by the way
+Ladies and gentlemen
+This is Mambo No. 5!
 
-Uh
+One, two, three, four, five
+Everybody in the car, so come on let's ride
+To the liquor store around the corner
+The boys say they want some gin and juice
+But I really don't wanna
+Beer bust, like I had last week
+I must stay deep, 'cause talk is cheap
+I like Angela, Pamela, Sandra and Rita
+And as I continue you know they're getting sweeter
+So what can I do? I really beg you, my Lord
+To me flirting is just like a sport
+Anything fly, it's all good let me dump it
+Please set in the trumpet
 
-Because I'm happy
-Clap along if you feel like a room without a roof
-Because I'm happy
-Clap along if you feel like happiness is the truth
-Because I'm happy
-Clap along if you know what happiness is to you
-Because I'm happy
-Clap along if you feel like that's what you wanna do
+A little bit of Monica in my life
+A little bit of Erica by my side
+A little bit of Rita is all I need
+A little bit of Tina is what I see
+A little bit of Sandra in the sun
+A little bit of Mary all night long
+A little bit of Jessica here I am
+A little bit of you makes me your man
 
-[Verse 2:]
-Here come bad news talking this and that, yeah,
-Well, give me all you got, and don't hold it back, yeah,
-Well, I should probably warn you I'll be just fine, yeah,
-No offense to you, don't waste your time
-Here's why
+Mambo No. 5!
 
-Hey
-Go
-Uh
+Jump up and down and move it all around
+Shake your head to the sound
+Put your hands on the ground
+Take one step left and one step right
+One to the front and one to the side
+Clap your hands once and clap your hands twice
+And if it looks like this then you're doing it right
 
-Bring me down
-Can't nothing
-Bring me down
-My level's too high
-Bring me down
-Can't nothing
-Bring me down
-I said (let me tell you now)
-Bring me down
-Can't nothing
-Bring me down
-My level's too high
-Bring me down
-Can't nothing
-Bring me down
-I said
+A little bit of Monica in my life
+A little bit of Erica by my side
+A little bit of Rita is all I need
+A little bit of Tina is what I see
+A little bit of Sandra in the sun
+A little bit of Mary all night long
+A little bit of Jessica here I am
+A little bit of you makes me your man
 
-Hey
-Go
-Uh
+Trumpet!
+The trumpet!
+Mambo No. 5!
+(Ha ha ha)
 
-Bring me down... can't nothing...
-Bring me down... my level's too high...
-Bring me down... can't nothing...
-Bring me down, I said (let me tell you now)
+A little bit of Monica in my life
+A little bit of Erica by my side
+A little bit of Rita is all I need
+A little bit of Tina is what I see
+A little bit of Sandra in the sun
+A little bit of Mary all night long
+A little bit of Jessica here I am
+A little bit of you makes me your man
 
-Hey
-C'mon
+I do ought to
+Fall in love with a girl like you
+Cause you can't run, you can't hide
+You and me gonna touch the sky
+
+Mambo No. 5!
 
 """
 
@@ -88,5 +98,7 @@ for token in tokens:
         average.append(values_per_word[token])
         print (token, "\t", values_per_word[token])
 
-print ("Total: ", total)
-print ("Average: ", sum(average) / len(average))
+print ("Total: ", round(total, 3))
+print ("Average: ", round(sum(average) / len(average), 3))
+print ("Word Count: ", len(tokens))
+print (round(total, 3), "\t", round(sum(average) / len(average), 3), "\t", len(tokens))
