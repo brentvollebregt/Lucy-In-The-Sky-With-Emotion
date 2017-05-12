@@ -1,15 +1,7 @@
-<h2>What is this?</h2>
- - get_data_from_musicbrainz.py will get data from MusicBrainz and print out the json output
- - get_sentiment_values_based_off_lyrics.py will calculate sentiment and output data using nltk
+<h2>We Have Data!</h2>
+This contains all the files that were used to mine our training data.
+Training data can be foudn in ev_output.csv in the format of [mood, spotify_uri, valence, energy].
 
-<h3>Runnable scripts:</h3>
- - get_data_from_musicbrainz.py
- - get_sentiment_values_based_off_lyrics.py
-
-To get an idea of what happens, put a songs in a folder then put the folder in the directory variable (remember / not \)
-An example of output for get_data_from_musicbrainz.py can be found in the file Example resonse from MusicBrainz.txt
-
-<h3>Requirements</h3>
- - BeautifulSoup (pip install beautifulsoup4)
- - mutagen (pip install mutagen)
- - nltk (pip install nltk)
+If you want to use the python script (mine.py), you will need to enter keys into settings.json as technically I am not allowed to distribute mine.
+Go to https://developer.spotify.com/my-applications/ and make an app to get your keys.
+In playlists, you can make a new mood and add playlists (it's json...) and of course you can edit the current mood playlists for your testing.
