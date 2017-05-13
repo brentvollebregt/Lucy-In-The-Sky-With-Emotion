@@ -5,8 +5,6 @@ public class Movement : MonoBehaviour {
 
 	public float rotateSpeed;
 
-	private Rigidbody rb;
-
 	private bool collided;
 
 	public float moveSpeed;
@@ -17,7 +15,6 @@ public class Movement : MonoBehaviour {
 	void Start ()
 	{
 		settings = GetComponent<ParticleSystem>().main;
-		//rb = GetComponent<Rigidbody>();
 	}
 //
 //	void FixedUpdate ()
@@ -30,19 +27,19 @@ public class Movement : MonoBehaviour {
 //
 //		rb.AddForce (movement * speed);
 //	}
-	void OnCollisionEnter(Collision col)
-	{
-		if (col.gameObject.name == "wall") {
-			float stopTime = Time.deltaTime + 5;
-			ParticleSystem.MainModule settings = GetComponent<ParticleSystem>().main;
-			settings.startColor = new ParticleSystem.MinMaxGradient (Color.red);
-			while (stopTime > Time.deltaTime) {
-			}
-			settings.startColor = new ParticleSystem.MinMaxGradient (Color.red);
-		}
-	}
+//	void OnCollisionEnter(Collision col)
+//	{
+//		if (col.gameObject.name == "wall") {
+//			float stopTime = Time.deltaTime + 5;
+//			ParticleSystem.MainModule settings = GetComponent<ParticleSystem>().main;
+//			settings.startColor = new ParticleSystem.MinMaxGradient (Color.red);
+//			while (stopTime > Time.deltaTime) {
+//			}
+//			settings.startColor = new ParticleSystem.MinMaxGradient (Color.red);
+//		}
+//	}
 		void Update(){
-		if (Input.GetAxis ("Colour") > 0) {
+		if (Input.GetAxis ("x") > 0) {
 			ParticleSystem.MainModule settings = GetComponent<ParticleSystem> ().main;
 			settings.startColor = new ParticleSystem.MinMaxGradient (Color.red);
 		} else {
