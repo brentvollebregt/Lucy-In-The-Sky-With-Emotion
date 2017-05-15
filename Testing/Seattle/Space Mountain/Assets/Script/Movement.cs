@@ -5,47 +5,55 @@ public class Movement : MonoBehaviour {
 
 	public float rotateSpeed;
 
-	private bool collided;
-
 	public float moveSpeed;
 
-	private ParticleSystem.MainModule settings;
+	ParticleSystem.ColorOverLifetimeModule colour;
 
+	bool IsInputEnabled;
+
+	public Transform centre;
+
+	float count;
+
+	public GameObject collisionParticle;
+
+	Quaternion Xrotation, Yrotation, Zrotation;
 
 	void Start ()
 	{
-		settings = GetComponent<ParticleSystem>().main;
+		colour = GetComponent<ParticleSystem> ().colorOverLifetime;
+		IsInputEnabled = true;
+		Xrotation = Quaternion.Euler (new Vector3(0, 0, 90));
+		Yrotation = Quaternion.Euler (new Vector3(0, 0, 0));
+		Zrotation = Quaternion.Euler (new Vector3(90, 0, 0));
 	}
-//
-//	void FixedUpdate ()
-//	{
-//		
-//		float moveHorizontal = Input.GetAxis ("Horizontal");
-//		float moveVertical = Input.GetAxis ("Vertical");
-//
-//		Vector3 movement = new Vector3 (moveHorizontal, 0.0f, moveVertical);
-//
-//		rb.AddForce (movement * speed);
-//	}
-//	void OnCollisionEnter(Collision col)
-//	{
-//		if (col.gameObject.name == "wall") {
-//			float stopTime = Time.deltaTime + 5;
-//			ParticleSystem.MainModule settings = GetComponent<ParticleSystem>().main;
-//			settings.startColor = new ParticleSystem.MinMaxGradient (Color.red);
-//			while (stopTime > Time.deltaTime) {
-//			}
-//			settings.startColor = new ParticleSystem.MinMaxGradient (Color.red);
-//		}
-//	}
-		void Update(){
-		if (Input.GetAxis ("x") > 0) {
-			ParticleSystem.MainModule settings = GetComponent<ParticleSystem> ().main;
-			settings.startColor = new ParticleSystem.MinMaxGradient (Color.red);
-		} else {
-			ParticleSystem.MainModule settings = GetComponent<ParticleSystem> ().main;
-			settings.startColor = new ParticleSystem.MinMaxGradient (Color.white);
+	void OnCollisionEnter(Collision collision) 
+	{
+		if (collision.gameObject.CompareTag("Wall")) {
+			IsInputEnabled = false;
+			colour.enabled = true;
+			count = Time.time + 0.5f;
+			collisionParticle.transform.position = transform.position;
+
+			collisionParticle.GetComponent<ParticleSystem> ().Play();
+
+
 		}
+	}
+		void Update(){
+
+
+		if (count < Time.time) {
+			IsInputEnabled = true;
+			colour.enabled = false;
+		}
+		if(IsInputEnabled)
+		{
+			if (Input.GetAxis ("x") > 0) {
+				colour.enabled = true;
+			} else {
+				colour.enabled = false;
+			}
 			float rotateHorizontal = Input.GetAxis ("LookLeftRight");
 			float rotateVertical = Input.GetAxis ("LookUpDown");
 		Vector3 rotatePlayer = new Vector3 (rotateVertical, rotateHorizontal, 0.0f);
@@ -53,14 +61,14 @@ public class Movement : MonoBehaviour {
 		transform.Rotate (rotatePlayer * Time.deltaTime * rotateSpeed);
 		transform.Translate(Vector3.forward * Time.deltaTime * moveForward * moveSpeed);
 		}
+		else{
+			transform.position = Vector3.MoveTowards(transform.position, centre.position, Time.deltaTime*moveSpeed*2);
+
+		}
+}
+	public void CollidedWithWall(Collision wall){
 
 
 
-
-//		Vector3 mouseMovement = (Input.mousePosition - (new Vector3(Screen.width, Screen.height, 0) / 2.0f)) * 1;
-//		transform.Rotate(new Vector3(-mouseMovement.y, mouseMovement.x, -mouseMovement.x) * 0.025f);
-//		transform.Translate(Vector3.forward * Time.deltaTime*currrentSpeed);
-	
-
-	
+	}
 }
