@@ -78,9 +78,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\FarlandSkies\Demo\Scripts\Player\FPSWalkerEnhanced.cs" />
+    <Compile Include="Assets\FarlandSkies\Demo\Scripts\Player\SmoothMouseLook.cs" />
+    <Compile Include="Assets\FarlandSkies\Demo\Scripts\Skybox\SkyboxChanger.cs" />
+    <Compile Include="Assets\FarlandSkies\Demo\Scripts\Skybox\SkyboxRotator.cs" />
+    <Compile Include="Assets\Pause.cs" />
+    <Compile Include="Assets\Script\CameraSwitch.cs" />
+    <Compile Include="Assets\Script\CollisionSparcle.cs" />
+    <Compile Include="Assets\Script\Colours.cs" />
+    <Compile Include="Assets\Script\Movement.cs" />
+    <Compile Include="Assets\Script\OrbitCameraScript.cs" />
+    <Compile Include="Assets\Script\Orbits.cs" />
     <Compile Include="Assets\Scripts\LoadSceneOnClick.cs" />
     <Compile Include="Assets\Scripts\QuitOnClick.cs" />
     <Compile Include="Assets\Scripts\SelectOnInput.cs" />
+    <Compile Include="Assets\SplineController_CS\MathUtils.cs" />
+    <Compile Include="Assets\SplineController_CS\SplineController.cs" />
+    <Compile Include="Assets\SplineController_CS\SplineInterpolator.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
