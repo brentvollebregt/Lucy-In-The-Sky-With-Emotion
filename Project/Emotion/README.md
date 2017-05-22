@@ -14,7 +14,8 @@ Go to https://developer.spotify.com/my-applications/ and make an app to get your
 
 ## Requirements
 
-None Currently
+* mutagen (pip install mutagen)
+* pyqt5 (soon)
 
 ## Authors
 

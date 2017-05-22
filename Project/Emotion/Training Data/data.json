@@ -1,0 +1,82 @@
+{
+    "spotify:track:1qhcO9Akt1mP0Y54OSTX9w": {
+        "album": "Nothing More",
+        "artist": "Nothing More",
+        "bpm": 105.955,
+        "energy": 0.914,
+        "file_location": "C:/Users/Brent/Desktop/A New Songs/Old new/Nothing More - Jenny.mp3",
+        "title": "Jenny",
+        "uri": "spotify:track:1qhcO9Akt1mP0Y54OSTX9w",
+        "valence": 0.188
+    },
+    "spotify:track:3VA4sjTMSTTF02hFGmlpJh": {
+        "album": "Riot!",
+        "artist": "Paramore",
+        "bpm": 136.96,
+        "energy": 0.793,
+        "file_location": "C:/Users/Brent/Desktop/A New Songs/Old new/Paramore - Crushcrushcrush.mp3",
+        "title": "Crushcrushcrush",
+        "uri": "spotify:track:3VA4sjTMSTTF02hFGmlpJh",
+        "valence": 0.658
+    },
+    "spotify:track:51c94ac31swyDQj9B3Lzs3": {
+        "album": "White Pony",
+        "artist": "Deftones",
+        "bpm": 141.581,
+        "energy": 0.853,
+        "file_location": "C:/Users/Brent/Desktop/A New Songs/Old new/Deftones - Change (In the House of Flies).mp3",
+        "title": "Change ",
+        "uri": "spotify:track:51c94ac31swyDQj9B3Lzs3",
+        "valence": 0.183
+    },
+    "spotify:track:5BmagRD7Thki6O1zZwbxBy": {
+        "album": "So Long, Astoria",
+        "artist": "The Ataris",
+        "bpm": 191.059,
+        "energy": 0.954,
+        "file_location": "C:/Users/Brent/Desktop/A New Songs/Old new/The Ataris - The Boys of Summer.mp3",
+        "title": "The Boys of Summer",
+        "uri": "spotify:track:5BmagRD7Thki6O1zZwbxBy",
+        "valence": 0.269
+    },
+    "spotify:track:5MxNLUsfh7uzROypsoO5qe": {
+        "album": "Aerosmith",
+        "artist": "Aerosmith",
+        "bpm": 160.9,
+        "energy": 0.433,
+        "file_location": "C:/Users/Brent/Desktop/A New Songs/Old new/Aerosmith - Dream On.mp3",
+        "title": "Dream On",
+        "uri": "spotify:track:5MxNLUsfh7uzROypsoO5qe",
+        "valence": 0.228
+    },
+    "spotify:track:5rpRzNcJZqKQXk9PIjreB6": {
+        "album": "The Man Comes Around",
+        "artist": "Johnny Cash",
+        "bpm": 91.469,
+        "energy": 0.376,
+        "file_location": "C:/Users/Brent/Desktop/A New Songs/Old new/Johnny Cash - Hurt.mp3",
+        "title": "Hurt",
+        "uri": "spotify:track:5rpRzNcJZqKQXk9PIjreB6",
+        "valence": 0.178
+    },
+    "spotify:track:7ISL3LO8AWP3fKIXunvqTa": {
+        "album": "Wolfmother",
+        "artist": "Wolfmother",
+        "bpm": 155.554,
+        "energy": 0.778,
+        "file_location": "C:/Users/Brent/Desktop/A New Songs/Old new/Wolfmother - Joker and the Thief.mp3",
+        "title": "Joker and the Thief",
+        "uri": "spotify:track:7ISL3LO8AWP3fKIXunvqTa",
+        "valence": 0.495
+    },
+    "spotify:track:7qSPdNGrKbaqLg6HqflCoZ": {
+        "album": "Slash",
+        "artist": "Slash",
+        "bpm": 72.113,
+        "energy": 0.658,
+        "file_location": "C:/Users/Brent/Desktop/A New Songs/Old new/Slash - By the Sword (feat. Andrew Stockdale).mp3",
+        "title": "By the Sword ",
+        "uri": "spotify:track:7qSPdNGrKbaqLg6HqflCoZ",
+        "valence": 0.223
+    }
+}

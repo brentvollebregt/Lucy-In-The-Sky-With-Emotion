@@ -1,6 +1,6 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
-import eyed3
+from mutagen.id3 import ID3
 import json
 
 
@@ -40,10 +40,10 @@ def get_tags(song): # Complete and tested - Brent
         song: dictionary of song
     Returns: dictionary of song with 'title', 'artist' and 'album' added
     """
-    audiofile = eyed3.load(song['file_location'])
-    song['title'] = audiofile.tag.title
-    song['artist'] = audiofile.tag.artist
-    song['album'] = audiofile.tag.album
+    audio = ID3(song['file_location'])
+    song['title'] = audio['TIT2'].text[0].split("(")[0]
+    song['artist'] = audio['TPE1'].text[0]
+    song['album'] = audio['TALB'].text[0]
     return song
 
 def get_uri(song): # Complete and tested - Brent (ft. and dupe artist in the tags can get screwed)
