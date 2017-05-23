@@ -1,6 +1,6 @@
 import sys, os
 from PyQt5 import QtCore, QtGui, QtWidgets
-from music import Ui_musicGUI
+from music2 import Ui_musicGUI
 
 class MusicGuiProgram(Ui_musicGUI):
         def __init__(self, dialog):
