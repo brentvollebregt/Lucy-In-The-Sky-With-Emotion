@@ -7,8 +7,9 @@ class MusicGuiProgram(Ui_musicGUI):
                 Ui_musicGUI.__init__(self)
                 self.setupUi(dialog)
 
-                # Connect "add" button with a custom function (addInputTextToListbox)
+                # Connect "Browse" button with open file dialog
                 self.buttonLoad.clicked.connect(self.readFiles)
+                # Connect List widget with the toggle recommended method
                 self.listWidget.currentItemChanged.connect(self.toggleRecommended)
                 
                 #read from the folder of the program
@@ -27,13 +28,14 @@ class MusicGuiProgram(Ui_musicGUI):
                         file = file.rpartition('.')[0]
                         self.listWidget.addItem(file)   #add each item to the list box
 
+        #This method is called whenever the selected item of the music listbox changes
+        #Thus, the recommended list is to be reproduced every time
         def toggleRecommended(self):
-                if self.listWidget.count() > 0:
-                        self.listWidgetRec.clear()
-                        try:
-                                self.listWidgetRec.addItem(self.listWidget.currentItem().text())
-                        except:
-                                print("")
+                self.listWidgetRec.clear()
+                try:
+                        self.listWidgetRec.addItem(self.listWidget.currentItem().text())
+                except:
+                        print("")
 
 if __name__ == '__main__':
         app = QtWidgets.QApplication(sys.argv)
