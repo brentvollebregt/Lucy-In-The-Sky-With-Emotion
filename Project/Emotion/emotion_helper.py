@@ -107,16 +107,18 @@ def get_recommended(uri, songs): # Dylan
     """
     # This stores the base value that will be used as the selected song to get the recommendations for
     baseURI = uri
-    baseEnergy = songs[uri]['energy']
-    baseValence = songs[uri]['valence']
+    # Create a new list to manipulate
+    songsCopy = dict(songs)
+    baseEnergy = songsCopy[uri]['energy']
+    baseValence = songsCopy[uri]['valence']
     # Delete the song from the list of songs
-    del songs[uri] # TODO THIS IS CAUSING ERRORS, IT IS DELETING THE URI FROM THE MAIN LIST - FIX: create a duplicate (not new=old because that creates a pointer) and use the duplicate
+    del songsCopy[uri]
     # Create the dictionary to store the distances
     distances = {}
     # Loop through songs and compare them and get a distance from the point
-    for song in songs:
-        valence = songs[song]['valence']
-        energy = songs[song]['energy']
+    for song in songsCopy:
+        valence = songsCopy[song]['valence']
+        energy = songsCopy[song]['energy']
         # Gets the distance between them
         calc_distance = mt.sqrt((baseEnergy-energy)**2 + (baseValence-valence)**2)
         # Adds the distance and the uris to a separate list
