@@ -60,7 +60,10 @@ def get_uri(song): # Complete and tested - Brent (ft. and dupe artist in the tag
             song['uri'] = i['uri']
             break
     else:
-        song['uri'] = result['tracks']['items'][0]['uri']
+        try:
+            song['uri'] = result['tracks']['items'][0]['uri']
+        except:
+            return None
     return song
 
 def int_index_to_uri_index(songs): # Complete and tested - Brent
@@ -107,7 +110,7 @@ def get_recommended(uri, songs): # Dylan
     baseEnergy = songs[uri]['energy']
     baseValence = songs[uri]['valence']
     # Delete the song from the list of songs
-    del songs[uri]
+    del songs[uri] # TODO THIS IS CAUSING ERRORS, IT IS DELETING THE URI FROM THE MAIN LIST - FIX: create a duplicate (not new=old because that creates a pointer) and use the duplicate
     # Create the dictionary to store the distances
     distances = {}
     # Loop through songs and compare them and get a distance from the point
