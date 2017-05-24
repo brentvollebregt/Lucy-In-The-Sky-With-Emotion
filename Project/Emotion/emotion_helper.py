@@ -2,6 +2,8 @@ import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from mutagen.id3 import ID3
 import json
+import math as mt
+import operator as op
 
 
 
@@ -92,7 +94,7 @@ def get_mood(song): # Jack
     """
     return None
 
-def get_recommended(uri, songs, amount): # Dylan
+def get_recommended(uri, songs): # Dylan
     """
     Args:
         uri: uri of the focus song (string)
@@ -100,7 +102,31 @@ def get_recommended(uri, songs, amount): # Dylan
         amount: int of amount of recommendations wanted
     Returns: list of recommendations as string uri's -> [uri, uri, uri] when amount = 3
     """
-    return None
+    # This stores the base value that will be used as the selected song to get the recommendations for
+    baseURI = uri
+    baseEnergy = songs[uri]['energy']
+    baseValence = songs[uri]['valence']
+    # Delete the song from the list of songs
+    del songs[uri]
+    # Create the dictionary to store the distances
+    distances = {}
+    # Loop through songs and compare them and get a distance from the point
+    for song in songs:
+        valence = songs[song]['valence']
+        energy = songs[song]['energy']
+        # Gets the distance between them
+        calc_distance = mt.sqrt((baseEnergy-energy)**2 + (baseValence-valence)**2)
+        # Adds the distance and the uris to a separate list
+        distances[song] = calc_distance
+    # Creates the list that will be returned
+    reccomended_songs = []
+    # For 5 recommendations
+    for i in range(5):
+        recc = max(distances, key=op.itemgetter(1))
+        reccomended_songs.append(recc)
+        del distances[recc]
+
+    return reccomended_songs
 
 def visualise(song): # Will link with other project when decided on connection type
     """
