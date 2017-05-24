@@ -1,6 +1,6 @@
 import sys, os, emotion_helper
 from PyQt5 import QtCore, QtGui, QtWidgets
-from music2 import Ui_musicGUI
+from GUI import Ui_musicGUI
 
 #default directory is the current working directory, overwritten on use of import button
 global directory
