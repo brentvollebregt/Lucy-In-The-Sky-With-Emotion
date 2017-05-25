@@ -127,7 +127,7 @@ def get_mood(song): # Jack
     reccomended_songs = []
     # For 5 recommendations
     for i in range(5):
-        recc = max(distances, key=op.itemgetter(1))
+        recc = min(distances, key=op.itemgetter(1))
         reccomended_songs.append(recc)
         del distances[recc]
 
