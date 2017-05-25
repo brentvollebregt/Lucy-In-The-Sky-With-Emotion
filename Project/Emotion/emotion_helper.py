@@ -1,6 +1,7 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 from mutagen.id3 import ID3
+from mutagen.mp3 import MP3
 import json
 import math as mt
 import operator as op
@@ -97,7 +98,6 @@ def get_mood(song): # Jack
     """
     return None
 
-def get_recommended(uri, songs): # Dylan
     """
     Args:
         uri: uri of the focus song (string)
@@ -133,10 +133,11 @@ def get_recommended(uri, songs): # Dylan
 
     return reccomended_songs
 
-def visualise(song): # Will link with other project when decided on connection type
+def get_length_of_file(location): # Complete and tested - Brent
     """
     Args:
-        song: dictionary of song
-    Returns: True/False on successful or not
+        location: location of a MP3
+    Returns: float of MP3 length
     """
-    return None
+    audio = MP3(location)
+    return audio.info.length
