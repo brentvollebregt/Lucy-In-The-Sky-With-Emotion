@@ -29,12 +29,16 @@ class MusicGuiProgram(Ui_musicGUI):
             tagged_data.append(emotion_helper.get_tags(file))
 
         uri_data = []
+        count = 0
         for file in tagged_data:
+            print ("\r" + str(round((count/len(tagged_data))*100, 2)) + "%", end='')
+            count += 1
             tmp = emotion_helper.get_uri(file)
             if tmp != None: # Have to remove songs which don't have search results
                 uri_data.append(emotion_helper.get_uri(file))
             else:
                 print (file['title'] + " - " + file['artist'] + " not found")
+        print ("\r" + str(round((count/len(tagged_data))*100, 2)) + "%")
 
         uri_index = emotion_helper.int_index_to_uri_index(uri_data)
 

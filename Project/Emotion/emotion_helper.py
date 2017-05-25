@@ -4,7 +4,6 @@ from mutagen.id3 import ID3
 from mutagen.mp3 import MP3
 import json
 import math as mt
-import operator as op
 
 
 
@@ -127,7 +126,7 @@ def get_mood(song): # Jack
     reccomended_songs = []
     # For 5 recommendations
     for i in range(5):
-        recc = min(distances, key=op.itemgetter(1))
+        recc = min(distances, key=distances.get)
         reccomended_songs.append(recc)
         del distances[recc]
 
