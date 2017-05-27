@@ -60,7 +60,7 @@ class MusicGuiProgram(Ui_musicGUI):
         recSongs = emotion_helper.get_recommended(self.current_uri, self.data)
 
         for song in recSongs:
-            self.listWidgetRec.addItem(self.data[song]['title'] + " - " + self.data[song]['album'])
+            self.listWidgetRec.addItem(self.data[song]['title'] + " - " + self.data[song]['artist'])
 
         # TODO Generate mood data and append data to a new widget when Ryan has created it
 
