@@ -12,9 +12,9 @@ class Ui_musicGUI(object):
     def setupUi(self, musicGUI):
         musicGUI.setObjectName("musicGUI")
         musicGUI.setEnabled(True)
-        musicGUI.resize(674, 613)
-        musicGUI.setMinimumSize(QtCore.QSize(674, 613))
-        musicGUI.setMaximumSize(QtCore.QSize(674, 613))
+        musicGUI.resize(674, 650)
+        musicGUI.setMinimumSize(QtCore.QSize(674, 650))
+        musicGUI.setMaximumSize(QtCore.QSize(674, 650))
         musicGUI.setStyleSheet("QToolTip\n"
 "{\n"
 "     border: 1px solid black;\n"
@@ -475,49 +475,47 @@ class Ui_musicGUI(object):
 "    border: 1px solid #444;\n"
 "}")
         self.buttonLoad = QtWidgets.QPushButton(musicGUI)
-        self.buttonLoad.setGeometry(QtCore.QRect(230, 470, 75, 31))
+        self.buttonLoad.setGeometry(QtCore.QRect(550, 590, 81, 41))
+        self.buttonLoad.setStyleSheet("font: 14pt \"MS Shell Dlg 2\";")
         self.buttonLoad.setObjectName("buttonLoad")
         self.title = QtWidgets.QLabel(musicGUI)
-        self.title.setGeometry(QtCore.QRect(20, 20, 291, 21))
-        self.title.setStyleSheet("font: 14pt \"MS Shell Dlg 2\";\n"
+        self.title.setGeometry(QtCore.QRect(40, 20, 421, 41))
+        self.title.setStyleSheet("font: 24pt \"MS Shell Dlg 2\";\n"
 "text-decoration: underline;")
         self.title.setScaledContents(True)
         self.title.setAlignment(QtCore.Qt.AlignCenter)
         self.title.setWordWrap(False)
         self.title.setObjectName("title")
         self.listWidget = QtWidgets.QListWidget(musicGUI)
-        self.listWidget.setGeometry(QtCore.QRect(40, 130, 256, 291))
+        self.listWidget.setGeometry(QtCore.QRect(40, 150, 291, 421))
         self.listWidget.setObjectName("listWidget")
         self.label_2 = QtWidgets.QLabel(musicGUI)
-        self.label_2.setGeometry(QtCore.QRect(370, 80, 251, 31))
-        self.label_2.setStyleSheet("font: 10pt \"MS Shell Dlg 2\";\n"
+        self.label_2.setGeometry(QtCore.QRect(370, 100, 251, 31))
+        self.label_2.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
 "text-decoration: underline;")
         self.label_2.setAlignment(QtCore.Qt.AlignCenter)
         self.label_2.setObjectName("label_2")
         self.listWidgetRec = QtWidgets.QListWidget(musicGUI)
-        self.listWidgetRec.setGeometry(QtCore.QRect(370, 130, 256, 291))
+        self.listWidgetRec.setGeometry(QtCore.QRect(360, 150, 291, 151))
         self.listWidgetRec.setObjectName("listWidgetRec")
-        self.textBrowser = QtWidgets.QTextBrowser(musicGUI)
-        self.textBrowser.setGeometry(QtCore.QRect(370, 440, 256, 81))
-        self.textBrowser.setObjectName("textBrowser")
         self.textBrowser_2 = QtWidgets.QTextBrowser(musicGUI)
-        self.textBrowser_2.setGeometry(QtCore.QRect(40, 440, 181, 71))
+        self.textBrowser_2.setGeometry(QtCore.QRect(370, 590, 171, 41))
         self.textBrowser_2.setObjectName("textBrowser_2")
         self.label_3 = QtWidgets.QLabel(musicGUI)
-        self.label_3.setGeometry(QtCore.QRect(40, 80, 251, 31))
-        self.label_3.setStyleSheet("font: 10pt \"MS Shell Dlg 2\";\n"
+        self.label_3.setGeometry(QtCore.QRect(40, 100, 251, 31))
+        self.label_3.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
 "text-decoration: underline;")
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.line = QtWidgets.QFrame(musicGUI)
-        self.line.setGeometry(QtCore.QRect(40, 50, 601, 16))
+        self.line.setGeometry(QtCore.QRect(40, 70, 601, 16))
         self.line.setStyleSheet("color: rgb(255, 85, 0);")
         self.line.setFrameShadow(QtWidgets.QFrame.Plain)
         self.line.setLineWidth(1)
         self.line.setFrameShape(QtWidgets.QFrame.HLine)
         self.line.setObjectName("line")
         self.buttonVisual = QtWidgets.QPushButton(musicGUI)
-        self.buttonVisual.setGeometry(QtCore.QRect(240, 530, 101, 41))
+        self.buttonVisual.setGeometry(QtCore.QRect(230, 590, 101, 41))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
         font.setPointSize(14)
@@ -528,8 +526,37 @@ class Ui_musicGUI(object):
         self.buttonVisual.setStyleSheet("font: 75 14pt \"MS Shell Dlg 2\";")
         self.buttonVisual.setObjectName("buttonVisual")
         self.textBrowser_3 = QtWidgets.QTextBrowser(musicGUI)
-        self.textBrowser_3.setGeometry(QtCore.QRect(40, 530, 181, 51))
+        self.textBrowser_3.setGeometry(QtCore.QRect(40, 590, 181, 41))
         self.textBrowser_3.setObjectName("textBrowser_3")
+        self.tableWidget = QtWidgets.QTableWidget(musicGUI)
+        self.tableWidget.setGeometry(QtCore.QRect(360, 338, 289, 233))
+        self.tableWidget.setMaximumSize(QtCore.QSize(289, 233))
+        self.tableWidget.setStyleSheet("")
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(1)
+        self.tableWidget.setRowCount(7)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(2, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(3, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(5, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setVerticalHeaderItem(6, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, item)
+        self.tableWidget.horizontalHeader().setVisible(False)
+        self.tableWidget.horizontalHeader().setDefaultSectionSize(238)
+        self.tableWidget.verticalHeader().setVisible(True)
+        self.tableWidget.verticalHeader().setCascadingSectionResizes(False)
+        self.tableWidget.verticalHeader().setDefaultSectionSize(33)
+        self.tableWidget.verticalHeader().setMinimumSectionSize(24)
 
         self.retranslateUi(musicGUI)
         QtCore.QMetaObject.connectSlotsByName(musicGUI)
@@ -540,23 +567,34 @@ class Ui_musicGUI(object):
         self.buttonLoad.setText(_translate("musicGUI", "Browse"))
         self.title.setText(_translate("musicGUI", "Lucy and the Sky of Emotion"))
         self.label_2.setText(_translate("musicGUI", "Recommended Songs:"))
-        self.textBrowser.setHtml(_translate("musicGUI", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Possibly take the valence and energy values of a selected song and then choose another song which lies within an <span style=\" font-size:8pt;\">arbitrarily </span>close radius to that currently selected song.</p></body></html>"))
         self.textBrowser_2.setHtml(_translate("musicGUI", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Music is automatically loaded from the directory of the program. Use the \'browse\' button to select different files.</p></body></html>"))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Use the \'browse\' button select a directory containing music files.</p></body></html>"))
         self.label_3.setText(_translate("musicGUI", "Loaded Songs:"))
         self.buttonVisual.setText(_translate("musicGUI", "Visualise"))
         self.textBrowser_3.setHtml(_translate("musicGUI", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select a song from the \'Loaded Songs\' list and then click visualise!</p></body></html>"))
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Select a song from the \'Loaded Songs\' list and then click visualise!</p></body></html>"))
+        item = self.tableWidget.verticalHeaderItem(0)
+        item.setText(_translate("musicGUI", "Title"))
+        item = self.tableWidget.verticalHeaderItem(1)
+        item.setText(_translate("musicGUI", "Artist"))
+        item = self.tableWidget.verticalHeaderItem(2)
+        item.setText(_translate("musicGUI", "Album"))
+        item = self.tableWidget.verticalHeaderItem(3)
+        item.setText(_translate("musicGUI", "Length"))
+        item = self.tableWidget.verticalHeaderItem(4)
+        item.setText(_translate("musicGUI", "BPM"))
+        item = self.tableWidget.verticalHeaderItem(5)
+        item.setText(_translate("musicGUI", "Energy"))
+        item = self.tableWidget.verticalHeaderItem(6)
+        item.setText(_translate("musicGUI", "Valence"))
+        item = self.tableWidget.horizontalHeaderItem(0)
+        item.setText(_translate("musicGUI", "Selected Song:"))
 
 
 if __name__ == "__main__":
