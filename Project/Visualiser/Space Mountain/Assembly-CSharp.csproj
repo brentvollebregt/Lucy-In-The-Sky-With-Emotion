@@ -52,6 +52,7 @@
      <Compile Include="Assets\Script\Movement.cs" />
      <Compile Include="Assets\Script\OrbitCameraScript.cs" />
      <Compile Include="Assets\Script\Orbits.cs" />
+     <Compile Include="Assets\Script\jsonReader.cs" />
  <Reference Include="UnityEngine.Analytics">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
  </Reference>
