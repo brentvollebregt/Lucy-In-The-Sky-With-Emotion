@@ -44,8 +44,9 @@ class MusicGuiProgram(Ui_musicGUI):
 
         self.data = emotion_helper.get_spotify_data(uri_index)
         for song in self.data:
-            self.reference_table[self.data[song]['title'] + " - " + self.data[song]['album']] = song
-            self.listWidget.addItem(self.data[song]['title'] + " - " + self.data[song]['album'])
+            self.reference_table[self.data[song]['title'] + " - " + self.data[song]['artist']] = song
+            self.listWidget.addItem(self.data[song]['title'] + " - " + self.data[song]['artist'])
+        self.listWidget.sortItems()
         return True
 
     #This method is called whenever the selected item of the music listbox changes
