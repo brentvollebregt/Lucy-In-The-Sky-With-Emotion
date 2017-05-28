@@ -31,14 +31,13 @@ class MusicGuiProgram(Ui_musicGUI):
         uri_data = []
         count = 0
         for file in tagged_data:
-            print ("\r" + str(round((count/len(tagged_data))*100, 2)) + "%", end='')
             count += 1
+            print ("\r" + str(round((count/len(tagged_data))*100, 2)) + "%", end='')
             tmp = emotion_helper.get_uri(file)
             if tmp != None: # Have to remove songs which don't have search results
                 uri_data.append(emotion_helper.get_uri(file))
             else:
                 print (file['title'] + " - " + file['artist'] + " not found")
-        print ("\r" + str(round((count/len(tagged_data))*100, 2)) + "%")
 
         uri_index = emotion_helper.int_index_to_uri_index(uri_data)
 
@@ -70,7 +69,7 @@ class MusicGuiProgram(Ui_musicGUI):
         if self.current_uri == "":
             print ("No song selected [make dialog]")
             return
-        pass_to_visualiser = {
+        pass_to_visualiser = [{
             "title" : self.data[self.current_uri]['title'],
             "artist" : self.data[self.current_uri]['artist'],
             "bpm" : self.data[self.current_uri]['bpm'],
@@ -79,7 +78,21 @@ class MusicGuiProgram(Ui_musicGUI):
             "song_length" : self.data[self.current_uri]['title'],
             "song_length" : emotion_helper.get_length_of_file(self.data[self.current_uri]['file_location']),
             "file_location" : self.data[self.current_uri]['file_location']
-        }
+        }]
+
+        recSongs = emotion_helper.get_recommended(self.current_uri, self.data)
+
+        for song in recSongs:
+            pass_to_visualiser.append({
+            "title" : self.data[song]['title'],
+            "artist" : self.data[song]['artist'],
+            "bpm" : self.data[song]['bpm'],
+            "energy" : self.data[song]['energy'],
+            "valence" : self.data[song]['valence'],
+            "song_length" : self.data[song]['title'],
+            "song_length" : emotion_helper.get_length_of_file(self.data[song]['file_location']),
+            "file_location" : self.data[song]['file_location']
+        })
 
         with open('visualiser_data.json', 'w') as data_file:
             json.dump(pass_to_visualiser, data_file, indent=4, sort_keys=True)
