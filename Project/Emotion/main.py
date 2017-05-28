@@ -2,6 +2,7 @@ import sys, os, emotion_helper
 from PyQt5 import QtCore, QtGui, QtWidgets
 from GUI import Ui_musicGUI
 import json
+from shutil import copyfile
 
 class MusicGuiProgram(Ui_musicGUI):
     def __init__(self, dialog):
@@ -69,30 +70,36 @@ class MusicGuiProgram(Ui_musicGUI):
         if self.current_uri == "":
             print ("No song selected [make dialog]")
             return
-        pass_to_visualiser = [{
+
+        pass_to_visualiser = {1 : {
             "title" : self.data[self.current_uri]['title'],
             "artist" : self.data[self.current_uri]['artist'],
             "bpm" : self.data[self.current_uri]['bpm'],
             "energy" : self.data[self.current_uri]['energy'],
             "valence" : self.data[self.current_uri]['valence'],
-            "song_length" : self.data[self.current_uri]['title'],
             "song_length" : emotion_helper.get_length_of_file(self.data[self.current_uri]['file_location']),
-            "file_location" : self.data[self.current_uri]['file_location']
-        }]
+            "original_file_location" : self.data[self.current_uri]['file_location']
+        }}
 
         recSongs = emotion_helper.get_recommended(self.current_uri, self.data)
 
+        currentIndex = 1
         for song in recSongs:
-            pass_to_visualiser.append({
+            currentIndex += 1
+            pass_to_visualiser[currentIndex] = {
             "title" : self.data[song]['title'],
             "artist" : self.data[song]['artist'],
             "bpm" : self.data[song]['bpm'],
             "energy" : self.data[song]['energy'],
             "valence" : self.data[song]['valence'],
-            "song_length" : self.data[song]['title'],
             "song_length" : emotion_helper.get_length_of_file(self.data[song]['file_location']),
-            "file_location" : self.data[song]['file_location']
-        })
+            "original_file_location" : self.data[song]['file_location']
+        }
+
+        visualiser_assets_folder = os.getcwd() + "/assestfile/"
+
+        for song in pass_to_visualiser:
+            copyfile(pass_to_visualiser[song]["original_file_location"], visualiser_assets_folder + str(song) + ".mp3")
 
         with open('visualiser_data.json', 'w') as data_file:
             json.dump(pass_to_visualiser, data_file, indent=4, sort_keys=True)
