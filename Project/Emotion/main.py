@@ -22,36 +22,40 @@ class MusicGuiProgram(Ui_musicGUI):
         self.current_uri = ""
 
     def openFiles(self):
-        #use a system open file dialog to select a directory
         directory = QtWidgets.QFileDialog.getExistingDirectory(dialog, "QFileDialog.getExistingDirectory()")
         self.listWidget.clear()
         data = emotion_helper.import_from_dir(directory)
         tagged_data = []
+        print ("Getting mp3 data")
         for file in data:
             tagged_data.append(emotion_helper.get_tags(file))
 
-        uri_data = []
+        print ("Starting threads to search for uri's")
+        threads = {}
+        self.uri_data = []
         count = 0
+        self.total = len(tagged_data)
+        self.complete = 0
         for file in tagged_data:
             count += 1
-            print ("\r" + str(round((count/len(tagged_data))*100, 2)) + "%", end='')
-            tmp = emotion_helper.get_uri(file)
-            if tmp != None: # Have to remove songs which don't have search results
-                uri_data.append(emotion_helper.get_uri(file))
-            else:
-                print (file['title'] + " - " + file['artist'] + " not found")
+            # print ("\r" + str(round((count/len(tagged_data))*100, 2)) + "%", end='')
+            threads[count] = URI_Search_Thread(file, self)
+            threads[count].start()
+        for thread in threads:
+            threads[thread].wait()
+        print ("\nURI search complete")
 
-        uri_index = emotion_helper.int_index_to_uri_index(uri_data)
+        uri_index = emotion_helper.int_index_to_uri_index(self.uri_data)
 
+        print ("Getting spotify data")
         self.data = emotion_helper.get_spotify_data(uri_index)
         for song in self.data:
             self.reference_table[self.data[song]['title'] + " - " + self.data[song]['artist']] = song
             self.listWidget.addItem(self.data[song]['title'] + " - " + self.data[song]['artist'])
         self.listWidget.sortItems()
+        print ("Music imported")
         return True
 
-    #This method is called whenever the selected item of the music listbox changes
-    #Thus, the recommended list is to be reproduced every time
     def recommend(self):
         self.listWidgetRec.clear()
 
@@ -63,7 +67,7 @@ class MusicGuiProgram(Ui_musicGUI):
         for song in recSongs:
             self.listWidgetRec.addItem(self.data[song]['title'] + " - " + self.data[song]['artist'])
 
-        # TODO Generate mood data and append data to a new widget when Ryan has created it
+        # TODO Generate mood data and append data to a new widget when Ryan has given a method
 
         return True
 
@@ -109,6 +113,22 @@ class MusicGuiProgram(Ui_musicGUI):
 
         # Call visualise()
         print("Yo yo")
+
+
+class URI_Search_Thread(QtCore.QThread):
+    def __init__(self, song, GUI):
+        QtCore.QThread.__init__(self)
+        self.song = song
+        self.GUI = GUI
+    def run(self):
+        tmp = emotion_helper.get_uri(self.song)
+        if tmp != None:
+            self.GUI.uri_data.append(tmp)
+        else:
+            print ("\n" + self.song['title'] + " - " + self.song['artist'] + " not found")
+        self.GUI.complete += 1
+        print ("\rCompleted: " + str(self.GUI.complete) + "/" + str(self.GUI.total), end='')
+
 
 
 if __name__ == '__main__':

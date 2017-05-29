@@ -93,10 +93,11 @@ def get_mood(song): # Jack
     """
     Args:
         song: dictionary of song
-    Returns: [mood, confidence] (TBC)
+    Returns: "mood"
     """
-    return None
+    return "mood" # temporary for linking
 
+def get_recommended(uri, songs): # Complete and tested - Dylan
     """
     Args:
         uri: uri of the focus song (string)

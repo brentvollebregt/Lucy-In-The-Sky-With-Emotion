@@ -155,9 +155,9 @@ class Spotify(object):
                         raise
                     else:
                         sleep_seconds = int(e.headers.get('Retry-After', delay))
-                        print ('retrying ...' + str(sleep_seconds) + 'secs')
+                        #print ('retrying ...' + str(sleep_seconds) + 'secs')
                         time.sleep(sleep_seconds + 1)
-                        delay += 1
+                        delay += 0.5
                 else:
                     raise
             except Exception as e:
@@ -168,9 +168,9 @@ class Spotify(object):
                 retries -= 1
                 if retries >= 0:
                     sleep_seconds = int(e.headers.get('Retry-After', delay))
-                    print ('retrying ...' + str(delay) + 'secs')
+                    #print ('retrying ...' + str(delay) + 'secs')
                     time.sleep(sleep_seconds + 1)
-                    delay += 1
+                    delay += 0.5
                 else:
                     raise
 
