@@ -3,6 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from GUI import Ui_musicGUI
 import json
 from shutil import copyfile
+import csv
 
 class MusicGuiProgram(Ui_musicGUI):
     def __init__(self, dialog):
@@ -71,38 +72,40 @@ class MusicGuiProgram(Ui_musicGUI):
             print ("No song selected [make dialog]")
             return
 
-        pass_to_visualiser = {1 : {
-            "title" : self.data[self.current_uri]['title'],
-            "artist" : self.data[self.current_uri]['artist'],
-            "bpm" : self.data[self.current_uri]['bpm'],
-            "energy" : self.data[self.current_uri]['energy'],
-            "valence" : self.data[self.current_uri]['valence'],
-            "song_length" : emotion_helper.get_length_of_file(self.data[self.current_uri]['file_location']),
-            "original_file_location" : self.data[self.current_uri]['file_location']
-        }}
+        csv_output = [["number", "title", "artist", "bpm", "energy", "valence", "song_length", "original_file_location"]]
+        csv_output.append([1,
+                           self.data[self.current_uri]['title'],
+                           self.data[self.current_uri]['artist'],
+                           self.data[self.current_uri]['bpm'],
+                           self.data[self.current_uri]['energy'],
+                           self.data[self.current_uri]['valence'],
+                           emotion_helper.get_length_of_file(self.data[self.current_uri]['file_location']),
+                           self.data[self.current_uri]['file_location']
+                           ])
 
         recSongs = emotion_helper.get_recommended(self.current_uri, self.data)
 
         currentIndex = 1
         for song in recSongs:
             currentIndex += 1
-            pass_to_visualiser[currentIndex] = {
-            "title" : self.data[song]['title'],
-            "artist" : self.data[song]['artist'],
-            "bpm" : self.data[song]['bpm'],
-            "energy" : self.data[song]['energy'],
-            "valence" : self.data[song]['valence'],
-            "song_length" : emotion_helper.get_length_of_file(self.data[song]['file_location']),
-            "original_file_location" : self.data[song]['file_location']
-        }
+            csv_output.append([currentIndex,
+                               self.data[song]['title'],
+                               self.data[song]['artist'],
+                               self.data[song]['bpm'],
+                               self.data[song]['energy'],
+                               self.data[song]['valence'],
+                               emotion_helper.get_length_of_file(self.data[song]['file_location']),
+                               self.data[song]['file_location']
+                               ])
 
         visualiser_assets_folder = os.getcwd() + "/assestfile/"
 
-        for song in pass_to_visualiser:
-            copyfile(pass_to_visualiser[song]["original_file_location"], visualiser_assets_folder + str(song) + ".mp3")
+        for song in csv_output[1:]:
+            copyfile(song[7], visualiser_assets_folder + str(song[0]) + ".mp3")
 
-        with open('visualiser_data.json', 'w') as data_file:
-            json.dump(pass_to_visualiser, data_file, indent=4, sort_keys=True)
+        with open("visualiser_data.csv", "w", newline='') as csv_file:
+            writer = csv.writer(csv_file)
+            writer.writerows(csv_output)
 
         # Call visualise()
         print("Yo yo")
