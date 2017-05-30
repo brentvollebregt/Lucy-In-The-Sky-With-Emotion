@@ -121,13 +121,20 @@ class URI_Search_Thread(QtCore.QThread):
         self.song = song
         self.GUI = GUI
     def run(self):
-        tmp = emotion_helper.get_uri(self.song)
-        if tmp != None:
-            self.GUI.uri_data.append(tmp)
-        else:
-            print ("\n" + self.song['title'] + " - " + self.song['artist'] + " not found")
-        self.GUI.complete += 1
-        print ("\rCompleted: " + str(self.GUI.complete) + "/" + str(self.GUI.total), end='')
+        retries = 0
+        while retries < 5:
+            try:
+                tmp = emotion_helper.get_uri(self.song)
+                if tmp != None:
+                    self.GUI.uri_data.append(tmp)
+                else:
+                    print ("\n" + self.song['title'] + " - " + self.song['artist'] + " not found")
+                self.GUI.complete += 1
+                print ("\rCompleted: " + str(self.GUI.complete) + "/" + str(self.GUI.total), end='')
+                return
+            except Exception:
+                retries += 1
+        print ("\n" + self.song['title'] + " - " + self.song['artist'] + " failed")
 
 
 
