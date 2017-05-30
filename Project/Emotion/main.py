@@ -9,7 +9,8 @@ class MusicGuiProgram(Ui_musicGUI):
     def __init__(self, dialog):
         Ui_musicGUI.__init__(self)
         self.setupUi(dialog)
-
+        self.status.setText('')
+        
         # Connect "Browse" button with open file dialog
         self.buttonLoad.clicked.connect(self.openFiles)
         # Connect List widget with the toggle recommended method
@@ -22,6 +23,7 @@ class MusicGuiProgram(Ui_musicGUI):
         self.current_uri = ""
 
     def openFiles(self):
+        self.status.setText('Loading ...')
         directory = QtWidgets.QFileDialog.getExistingDirectory(dialog, "QFileDialog.getExistingDirectory()")
         self.listWidget.clear()
         data = emotion_helper.import_from_dir(directory)
@@ -54,6 +56,7 @@ class MusicGuiProgram(Ui_musicGUI):
             self.listWidget.addItem(self.data[song]['title'] + " - " + self.data[song]['artist'])
         self.listWidget.sortItems()
         print ("Music imported")
+        self.status.setText('')
         return True
 
     def recommend(self):
