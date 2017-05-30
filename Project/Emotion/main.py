@@ -23,16 +23,15 @@ class MusicGuiProgram(Ui_musicGUI):
         self.current_uri = ""
 
     def openFiles(self):
-        self.status.setText('Loading ...')
         directory = QtWidgets.QFileDialog.getExistingDirectory(dialog, "QFileDialog.getExistingDirectory()")
         self.listWidget.clear()
         data = emotion_helper.import_from_dir(directory)
         tagged_data = []
-        print ("Getting mp3 data")
+        self.wrtie_to_status("Getting mp3 data")
         for file in data:
             tagged_data.append(emotion_helper.get_tags(file))
 
-        print ("Starting threads to search for uri's")
+        self.wrtie_to_status("Starting threads to search for uri's")
         threads = {}
         self.uri_data = []
         count = 0
@@ -45,18 +44,17 @@ class MusicGuiProgram(Ui_musicGUI):
             threads[count].start()
         for thread in threads:
             threads[thread].wait()
-        print ("\nURI search complete")
+        self.wrtie_to_status("URI search complete")
 
         uri_index = emotion_helper.int_index_to_uri_index(self.uri_data)
 
-        print ("Getting spotify data")
+        self.wrtie_to_status("Getting spotify data")
         self.data = emotion_helper.get_spotify_data(uri_index)
         for song in self.data:
             self.reference_table[self.data[song]['title'] + " - " + self.data[song]['artist']] = song
             self.listWidget.addItem(self.data[song]['title'] + " - " + self.data[song]['artist'])
         self.listWidget.sortItems()
-        print ("Music imported")
-        self.status.setText('')
+        self.wrtie_to_status("Music imported")
         return True
 
     def recommend(self):
@@ -70,7 +68,7 @@ class MusicGuiProgram(Ui_musicGUI):
         for song in recSongs:
             self.listWidgetRec.addItem(self.data[song]['title'] + " - " + self.data[song]['artist'])
         
-        #Update the Table view to show the details of the currently selected song   
+        # Show mood in GUI
         
         self.tableWidget.setItem(0, 0, QtWidgets.QTableWidgetItem(self.data[self.current_uri]['title']))
         self.tableWidget.setItem(1, 0, QtWidgets.QTableWidgetItem(self.data[self.current_uri]['artist']))
@@ -85,7 +83,7 @@ class MusicGuiProgram(Ui_musicGUI):
 
     def visualise(self):
         if self.current_uri == "":
-            print ("No song selected [make dialog]")
+            self.wrtie_to_status("No song selected")
             return
 
         csv_output = [["number", "title", "artist", "bpm", "energy", "valence", "song_length", "original_file_location"]]
@@ -126,6 +124,11 @@ class MusicGuiProgram(Ui_musicGUI):
         # Call visualise()
         print("Yo yo")
 
+    def wrtie_to_status(self, message):
+        self.status.setText(message)
+        self.status.repaint()
+        QtCore.QCoreApplication.processEvents()
+
 
 class URI_Search_Thread(QtCore.QThread):
     def __init__(self, song, GUI):
@@ -140,13 +143,13 @@ class URI_Search_Thread(QtCore.QThread):
                 if tmp != None:
                     self.GUI.uri_data.append(tmp)
                 else:
-                    print ("\n" + self.song['title'] + " - " + self.song['artist'] + " not found")
+                    print (self.song['title'] + " - " + self.song['artist'] + " not found")
                 self.GUI.complete += 1
-                print ("\rCompleted: " + str(self.GUI.complete) + "/" + str(self.GUI.total), end='')
+                self.GUI.wrtie_to_status("Completed: " + str(self.GUI.complete) + "/" + str(self.GUI.total))
                 return
             except Exception:
                 retries += 1
-        print ("\n" + self.song['title'] + " - " + self.song['artist'] + " failed")
+        print (self.song['title'] + " - " + self.song['artist'] + " failed")
 
 
 

@@ -43,7 +43,7 @@ def get_tags(song): # Complete and tested - Brent
     Returns: dictionary of song with 'title', 'artist' and 'album' added
     """
     audio = ID3(song['file_location'])
-    song['title'] = audio['TIT2'].text[0].split("(")[0]
+    song['title'] = audio['TIT2'].text[0]#.split("(")[0]
     song['artist'] = audio['TPE1'].text[0]
     song['album'] = audio['TALB'].text[0]
     return song
