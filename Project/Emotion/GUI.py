@@ -12,9 +12,9 @@ class Ui_musicGUI(object):
     def setupUi(self, musicGUI):
         musicGUI.setObjectName("musicGUI")
         musicGUI.setEnabled(True)
-        musicGUI.resize(674, 650)
+        musicGUI.resize(674, 670)
         musicGUI.setMinimumSize(QtCore.QSize(674, 650))
-        musicGUI.setMaximumSize(QtCore.QSize(674, 650))
+        musicGUI.setMaximumSize(QtCore.QSize(674, 670))
         musicGUI.setStyleSheet("QToolTip\n"
 "{\n"
 "     border: 1px solid black;\n"
@@ -552,7 +552,7 @@ class Ui_musicGUI(object):
         self.tableWidget.verticalHeader().setDefaultSectionSize(33)
         self.tableWidget.verticalHeader().setMinimumSectionSize(24)
         self.status = QtWidgets.QLabel(musicGUI)
-        self.status.setGeometry(QtCore.QRect(140, 580, 61, 31))
+        self.status.setGeometry(QtCore.QRect(49, 629, 281, 31))
         self.status.setStyleSheet("font: 11pt \"MS Shell Dlg 2\";")
         self.status.setObjectName("status")
 
