@@ -66,8 +66,17 @@ class MusicGuiProgram(Ui_musicGUI):
 
         for song in recSongs:
             self.listWidgetRec.addItem(self.data[song]['title'] + " - " + self.data[song]['artist'])
+        
+        #Update the Table view to show the details of the currently selected song   
+        
+        self.tableWidget.setItem(0, 0, QtWidgets.QTableWidgetItem(self.data[self.current_uri]['title']))
+        self.tableWidget.setItem(1, 0, QtWidgets.QTableWidgetItem(self.data[self.current_uri]['artist']))
+        self.tableWidget.setItem(2, 0, QtWidgets.QTableWidgetItem(self.data[self.current_uri]['album']))
+        self.tableWidget.setItem(3, 0, QtWidgets.QTableWidgetItem(str(emotion_helper.get_length_of_file(self.data[self.current_uri]['file_location']))))
+        self.tableWidget.setItem(4, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['bpm'])))
+        self.tableWidget.setItem(5, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['energy'])))
+        self.tableWidget.setItem(6, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['valence'])))
 
-        # TODO Generate mood data and append data to a new widget when Ryan has given a method
 
         return True
 
