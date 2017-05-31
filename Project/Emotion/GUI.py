@@ -12,9 +12,9 @@ class Ui_musicGUI(object):
     def setupUi(self, musicGUI):
         musicGUI.setObjectName("musicGUI")
         musicGUI.setEnabled(True)
-        musicGUI.resize(674, 650)
+        musicGUI.resize(674, 670)
         musicGUI.setMinimumSize(QtCore.QSize(674, 650))
-        musicGUI.setMaximumSize(QtCore.QSize(674, 650))
+        musicGUI.setMaximumSize(QtCore.QSize(674, 670))
         musicGUI.setStyleSheet("QToolTip\n"
 "{\n"
 "     border: 1px solid black;\n"
@@ -499,7 +499,7 @@ class Ui_musicGUI(object):
         self.listWidgetRec.setGeometry(QtCore.QRect(360, 150, 291, 151))
         self.listWidgetRec.setObjectName("listWidgetRec")
         self.label_3 = QtWidgets.QLabel(musicGUI)
-        self.label_3.setGeometry(QtCore.QRect(40, 100, 251, 31))
+        self.label_3.setGeometry(QtCore.QRect(40, 100, 291, 31))
         self.label_3.setStyleSheet("font: 12pt \"MS Shell Dlg 2\";\n"
 "text-decoration: underline;")
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
@@ -551,6 +551,10 @@ class Ui_musicGUI(object):
         self.tableWidget.verticalHeader().setCascadingSectionResizes(False)
         self.tableWidget.verticalHeader().setDefaultSectionSize(33)
         self.tableWidget.verticalHeader().setMinimumSectionSize(24)
+        self.status = QtWidgets.QLabel(musicGUI)
+        self.status.setGeometry(QtCore.QRect(49, 629, 281, 31))
+        self.status.setStyleSheet("font: 11pt \"MS Shell Dlg 2\";")
+        self.status.setObjectName("status")
 
         self.retranslateUi(musicGUI)
         QtCore.QMetaObject.connectSlotsByName(musicGUI)
@@ -584,6 +588,7 @@ class Ui_musicGUI(object):
         item.setText(_translate("musicGUI", "Valence"))
         item = self.tableWidget.horizontalHeaderItem(0)
         item.setText(_translate("musicGUI", "Selected Song:"))
+        self.status.setText(_translate("musicGUI", "Standby"))
 
 
 if __name__ == "__main__":
