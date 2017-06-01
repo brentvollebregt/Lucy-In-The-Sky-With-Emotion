@@ -96,9 +96,9 @@ def get_mood(song): # Jack
     """
     Args:
         song: dictionary of song
-    Returns: "mood"
+    Returns: "Mood"
     """
-    return "mood" # temporary for linking
+    return "Happy" # Return either "Happy", "Sad" or "Neutral"
 
 def get_recommended(uri, songs): # Complete and tested - Dylan
     """

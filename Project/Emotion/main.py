@@ -78,8 +78,19 @@ class MusicGuiProgram(Ui_musicGUI):
         self.tableWidget.setItem(5, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['energy'])))
         self.tableWidget.setItem(6, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['valence'])))
 
+        mood = emotion_helper.get_mood(self.data[self.current_uri])
+        self.change_colour_theme(mood)
+        # TODO ADD MOOD ITEM TO GUI
 
         return True
+
+    def change_colour_theme(self, mood):
+        if mood == "Happy":
+            pass # TODO SET COLOUR THEME TO HAPPY
+        elif mood == "Sad":
+            pass # TODO SET COLOUR THEME TO SAD
+        else:
+            pass # TODO SET COLOUR THEME TO NEUTRAL
 
     def visualise(self):
         if self.current_uri == "":
