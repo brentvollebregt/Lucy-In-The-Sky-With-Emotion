@@ -1,55 +1,46 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using UnityEngine;
-
-public class jsonReader : MonoBehaviour {
-	[System.Serializable]
-	public class Song
-	{
-		public string artist,title, file_location;
-		public double bpm, songLength, valence, energy;
-	}
-	List<Song> jsonFiles;
-	string jsonString, path;
-
-	// Use this for initialization
-	void Start () {
-		path = Application.streamingAssetsPath + "/song1.json";
-		jsonString = File.ReadAllText (path);
-		Song song = JsonUtility.FromJson<Song> (jsonString);
-		Debug.Log (song.artist);
-//		jsonFiles = new	List<JSONFILE> ();
-//		int songCount = DirCount(Path.GetDirectoryName(@""));
-//		for (int i = 1; i <= songCount; i++) {
-//			using (StreamReader r = new StreamReader ("song"+ i +".json")) {
-//				string json = r.ReadToEnd ();
-//				jsonFiles.Add (JsonUtility.FromJson<JSONFILE> (json));
-//			}
-//		}
-//		Debug.Log (jsonFiles.Count);
-	}
-	// Update is called once per frame
-	void Update () {
-		
-	}
-//	void MoveJSON(){
-//		string sourceFile = "";
-//		string destinationFile = "";
-//	}
-//	void ReadJSON(){
-//	}
+﻿//using System.Collections;
+//using System.Collections.Generic;
+//using System.IO;
+//using UnityEngine;
 //
-//	public static long DirCount(DirectoryInfo d)
-//	{
-//		long i = 0;
-//		FileInfo[] fis = d.GetFiles();
-//		foreach (FileInfo fi in fis)
-//		{
-//			if (fi.Extension.Contains("json"))
-//				i++;
-//		}
-//		return i;
+//
+//public class jsonReader : MonoBehaviour {
+//	string jsonString, path;
+//	List<Song> songList;
+//	// Use this for initialization
+//	void Start () {
+//		songList = new List<Song> ();
+//		ReadFileType1 ();
+//
 //	}
-
-}
+//	// Update is called once per frame
+//	void Update () {
+//	}
+//	void ReadFileType1 (){
+//		path = Application.streamingAssetsPath + "/visualiser_data.json";
+//		jsonString = File.ReadAllText (path);
+////		jsonString.TrimStart ('[').TrimEnd ('}',']');
+////		//string[] songs = jsonString.Split("},");
+////		string[] songs = jsonString.Split(new string[] { "}," }, System.StringSplitOptions.None);
+////		for (int i = 0; i < songs.Length - 1; i++) {
+////			songs[i] += "}";
+////		}
+////			
+////
+////		for (int i = 0; i < songs.Length; i++) {
+////			songList.Add(JsonUtility.FromJson<Song>(songs[i]));
+////			Debug.Log(songList [i].artist);
+////		}
+//		string [] songsList = JsonUtility.FromJson<Song>(jsonString).ToString().Split(new string[] { "}," }, System.StringSplitOptions.None);
+//		Debug.Log(songList[0].artist);
+//	}
+//	void ReadFileType2(){
+//	}
+//}
+//
+////[System.Serializable]
+////public class Song
+////{
+////	public string artist,title, file_location;
+////	public double bpm, songLength, valence, energy;
+////}

@@ -1,0 +1,56 @@
+{
+    "Songs": [{
+        "artist": "Asking Alexandria",
+        "bpm": 96.993,
+        "energy": 0.954,
+        "original_file_location": "C:/Users/Brent/Music/Sorted/Asking Alexandria\\The Black\\The Black.mp3",
+        "song_length": 281.424,
+        "title": "The Black",
+        "valence": 0.153
+    },
+    {
+        "artist": "Asking Alexandria",
+        "bpm": 105.09,
+        "energy": 0.947,
+        "original_file_location": "C:/Users/Brent/Music/Sorted/Asking Alexandria\\The Black\\Sometimes It Ends.mp3",
+        "song_length": 284.4734693877551,
+        "title": "Sometimes It Ends",
+        "valence": 0.142
+    },
+    {
+        "artist": "Asking Alexandria",
+        "bpm": 182.033,
+        "energy": 0.967,
+        "original_file_location": "C:/Users/Brent/Music/Sorted/Asking Alexandria\\The Black\\We'll Be OK.mp3",
+        "song_length": 235.75510204081633,
+        "title": "We'll Be OK",
+        "valence": 0.175
+    },
+    {
+        "artist": "Asking Alexandria",
+        "bpm": 125.823,
+        "energy": 0.96,
+        "original_file_location": "C:/Users/Brent/Music/Sorted/Asking Alexandria\\The Black\\The Lost Souls.mp3",
+        "song_length": 245.3942857142857,
+        "title": "The Lost Souls",
+        "valence": 0.124
+    },
+    {
+        "artist": "Asking Alexandria",
+        "bpm": 149.949,
+        "energy": 0.986,
+        "original_file_location": "C:/Users/Brent/Music/Sorted/Asking Alexandria\\The Black\\Undivided.mp3",
+        "song_length": 215.77142857142857,
+        "title": "Undivided",
+        "valence": 0.159
+    },
+    {
+        "artist": "Asking Alexandria",
+        "bpm": 107.539,
+        "energy": 0.985,
+        "original_file_location": "C:/Users/Brent/Music/Sorted/Asking Alexandria\\The Black\\Let It Sleep.mp3",
+        "song_length": 244.40163265306123,
+        "title": "Let It Sleep",
+        "valence": 0.133
+    }]
+}

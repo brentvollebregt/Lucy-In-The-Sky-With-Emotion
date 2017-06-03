@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Space Mountain", "Assembly-CSharp.csproj", "{79310DD2-F9A7-7487-1EA9-5F8C2872FC23}"
 EndProject
+Project("{7A416B4E-1E60-29D6-A133-034998860620}") = "Space Mountain", "Assembly-UnityScript.unityproj", "{2DFD649C-9C46-391F-0142-79B600C27A51}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{79310DD2-F9A7-7487-1EA9-5F8C2872FC23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{79310DD2-F9A7-7487-1EA9-5F8C2872FC23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{79310DD2-F9A7-7487-1EA9-5F8C2872FC23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DFD649C-9C46-391F-0142-79B600C27A51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DFD649C-9C46-391F-0142-79B600C27A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DFD649C-9C46-391F-0142-79B600C27A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DFD649C-9C46-391F-0142-79B600C27A51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
