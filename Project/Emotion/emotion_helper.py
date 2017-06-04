@@ -4,6 +4,7 @@ from mutagen.id3 import ID3
 from mutagen.mp3 import MP3
 import json
 import math as mt
+import matplotlib.pyplot as plt
 
 
 
@@ -144,3 +145,25 @@ def get_length_of_file(location): # Complete and tested - Brent
     """
     audio = MP3(location)
     return audio.info.length
+
+
+def generatePlot(songs):
+    """
+    Args:
+        songs: The dictionary of songs that the user has imported
+    Returns: Draws a plot that the user can see their songs data on 
+            Colours the points based on their value 
+    """
+    energy = []
+    valence = []
+    colour = []
+
+    for song in songs:
+            energy += [songs[song]['energy']]
+            valence += [songs[song]['valence']]
+            colour += [mt.sqrt(songs[song]['energy']**2 + songs[song]['valence']**2)]
+    plt.scatter(valence,energy,c=colour)
+    plt.xlabel('Valence')
+    plt.ylabel('Energy')
+    plt.axis([0,1,0,1])
+    plt.show()
