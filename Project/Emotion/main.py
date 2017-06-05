@@ -112,7 +112,7 @@ class MusicGuiProgram(Ui_musicGUI):
             pass # TODO SET COLOUR THEME TO NEUTRAL
         
     def graph(self):
-        print("Connect graphing function here")
+        emotion_helper.generatePlot(self.data)
 
     def visualise(self):
         if self.current_uri == "":
