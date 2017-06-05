@@ -17,6 +17,8 @@ class MusicGuiProgram(Ui_musicGUI):
         self.listWidget.currentItemChanged.connect(self.recommend)
         # Connect "visualise" button with the visualiser method
         self.buttonVisual.clicked.connect(self.visualise)
+        # Connect "graph" button with the graphing method
+        self.buttonGraph.clicked.connect(self.graph)
 
         self.data = {}
         self.reference_table = {}
@@ -77,9 +79,26 @@ class MusicGuiProgram(Ui_musicGUI):
         self.tableWidget.setItem(4, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['bpm'])))
         self.tableWidget.setItem(5, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['energy'])))
         self.tableWidget.setItem(6, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['valence'])))
+        
+        #X,Y coordinate for the dial to move to, based on the current songs valence/energy value, relative to the gradient picture
+        x = (self.data[self.current_uri]['valence'] * 250) + self.gradient.x() - self.dial.width()/2
+        y = ((1-self.data[self.current_uri]['energy']) * 100) + self.gradient.y() - self.dial.height()/2 
+        
+        #move the dial to the location representing that song
+        self.dial.move(x,y)
+        
+        #obtain the colour at the coordinates of the dial (within the the gradient picture)
+        img = (self.gradient.grab()).toImage()
+        x = self.dial.x() - self.gradient.x() + self.dial.width()/2
+        y = self.dial.y() - self.gradient.y() + self.dial.width()/2
+        colour = img.pixel(x, y)
+        colour = QtGui.QColor(colour).getRgb()
+        
+        #change an element to this colour
+        self.tableWidget.item(0,0).setBackground(QtGui.QColor(colour[0],colour[1],colour[2]))
 
         mood = emotion_helper.get_mood(self.data[self.current_uri])
-        self.change_colour_theme(mood)
+        self.change_colour_theme(mood)        
         # TODO ADD MOOD ITEM TO GUI
 
         return True
@@ -91,6 +110,9 @@ class MusicGuiProgram(Ui_musicGUI):
             pass # TODO SET COLOUR THEME TO SAD
         else:
             pass # TODO SET COLOUR THEME TO NEUTRAL
+        
+    def graph(self):
+        print("Connect graphing function here")
 
     def visualise(self):
         if self.current_uri == "":
