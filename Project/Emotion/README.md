@@ -16,6 +16,8 @@ Go to https://developer.spotify.com/my-applications/ and make an app to get your
 
 * mutagen (pip install mutagen)
 * pyqt5 (soon)
+* sklearn + numpy (http://scikit-learn.org/stable/install.html)
+* pandas (pip install pandas (With PyPi))
 
 ## Authors
 
