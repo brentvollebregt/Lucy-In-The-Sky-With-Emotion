@@ -97,9 +97,14 @@ def get_mood(song): # Jack
     """
     Args:
         song: dictionary of song
-    Returns: "Mood"
+    Returns: Mood as string - either happy or sad
     """
-    return "Happy" # Return either "Happy", "Sad" or "Neutral"
+    temp = mood_classifier.prefict(song['energy'], song['valence'])
+    if temp == 1:
+        mood = "Happy"
+    else:
+        mood = "Sad"
+    return mood # Return either "Happy", "Sad" or "Neutral"
 
 def get_recommended(uri, songs): # Complete and tested - Dylan
     """
@@ -167,3 +172,17 @@ def generatePlot(songs):
     plt.ylabel('Energy')
     plt.axis([0,1,0,1])
     plt.show()
+
+
+def setup_ml():
+    """
+    Returns: Initialised K-NeighborsClassifier
+    """
+    temp1 = pd.read_csv('/Training Data/x_train.csv', sep=',',header=None)
+    temp2 = pd.read_csv('/Training Data/y_train.csv', sep=',', header=None)
+    y = np.array(temp2.values.flatten())
+    X = np.array(temp1)
+    #init a KNeighborsClassifier
+    mood_classifier = KNeighborsClassifier()
+    mood_classifier.fit(X_train, y_train)
+    return mood_classifier
