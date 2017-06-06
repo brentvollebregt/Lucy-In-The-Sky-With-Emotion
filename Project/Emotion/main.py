@@ -117,6 +117,7 @@ class MusicGuiProgram(Ui_musicGUI):
             return
 
         visualiser_assets_folder = os.getcwd() + "/assestfile/" # TODO CHANGE ON FULL MERGE
+        csv_write_location = os.getcwd() + "/assestfile/" # TODO CHANGE ON FULL MERGE
 
         csv_output = []
         csv_output.append([self.data[self.current_uri]['title'],
@@ -125,7 +126,8 @@ class MusicGuiProgram(Ui_musicGUI):
                            self.data[self.current_uri]['energy'],
                            self.data[self.current_uri]['valence'],
                            emotion_helper.get_length_of_file(self.data[self.current_uri]['file_location']),
-                           self.data[self.current_uri]['file_location']
+                           emotion_helper.get_mood(self.mood_classifier, self.data[self.current_uri]),
+                           "1.mp3"
                            ])
         copyfile(self.data[self.current_uri]['file_location'], visualiser_assets_folder + "1.mp3")
 
@@ -140,15 +142,16 @@ class MusicGuiProgram(Ui_musicGUI):
                                self.data[song]['energy'],
                                self.data[song]['valence'],
                                emotion_helper.get_length_of_file(self.data[song]['file_location']),
-                               self.data[song]['file_location']
+                               emotion_helper.get_mood(self.mood_classifier, self.data[song]),
+                               str(currentIndex) + ".mp3"
                                ])
             copyfile(self.data[song]['file_location'], visualiser_assets_folder + str(currentIndex) + ".mp3")
 
-        with open("visualiser_data.csv", "w", newline='') as csv_file:
+        with open(csv_write_location + "visualiser_data.csv", "w", newline='') as csv_file:
             writer = csv.writer(csv_file)
             writer.writerows(csv_output)
 
-        # Call visualise()
+        # TODO ON MERGE Call visualiser
         print("Yo yo")
 
     def wrtie_to_status(self, message):
