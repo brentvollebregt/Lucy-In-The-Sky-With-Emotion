@@ -4,6 +4,9 @@ from GUI import Ui_musicGUI
 from shutil import copyfile
 import csv
 
+import warnings
+warnings.simplefilter("ignore")
+
 class MusicGuiProgram(Ui_musicGUI):
     def __init__(self, dialog):
         Ui_musicGUI.__init__(self)
