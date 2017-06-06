@@ -5,7 +5,9 @@ from mutagen.mp3 import MP3
 import json
 import math as mt
 import matplotlib.pyplot as plt
-
+import numpy as np
+import pandas as pd
+from sklearn.neighbors import KNeighborsClassifier
 
 
 def chunks(l, n):
