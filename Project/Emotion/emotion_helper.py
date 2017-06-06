@@ -95,13 +95,13 @@ def get_spotify_data(songs): # Complete and tested - Brent
                 songs[song['uri']]['bpm'] = song['tempo']
     return songs
 
-def get_mood(song): # Jack
+def get_mood(mood_classifier, song): # Jack
     """
     Args:
         song: dictionary of song
     Returns: Mood as string - either happy or sad
     """
-    temp = mood_classifier.prefict(song['energy'], song['valence'])
+    temp = mood_classifier.predict([song['energy'], song['valence']])
     if temp == 1:
         mood = "Happy"
     else:
@@ -180,11 +180,11 @@ def setup_ml():
     """
     Returns: Initialised K-NeighborsClassifier
     """
-    temp1 = pd.read_csv('/Training Data/x_train.csv', sep=',',header=None)
-    temp2 = pd.read_csv('/Training Data/y_train.csv', sep=',', header=None)
+    temp1 = pd.read_csv('Training Data/x_train.csv', sep=',',header=None)
+    temp2 = pd.read_csv('Training Data/y_train.csv', sep=',', header=None)
     y = np.array(temp2.values.flatten())
     X = np.array(temp1)
     #init a KNeighborsClassifier
     mood_classifier = KNeighborsClassifier()
-    mood_classifier.fit(X_train, y_train)
+    mood_classifier.fit(X, y)
     return mood_classifier

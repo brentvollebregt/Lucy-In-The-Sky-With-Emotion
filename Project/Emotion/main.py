@@ -22,6 +22,7 @@ class MusicGuiProgram(Ui_musicGUI):
         self.data = {}
         self.reference_table = {}
         self.current_uri = ""
+        self.mood_classifier = emotion_helper.setup_ml()
 
     def openFiles(self):
         directory = QtWidgets.QFileDialog.getExistingDirectory(dialog, "QFileDialog.getExistingDirectory()")
@@ -78,6 +79,7 @@ class MusicGuiProgram(Ui_musicGUI):
         self.tableWidget.setItem(4, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['bpm'])))
         self.tableWidget.setItem(5, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['energy'])))
         self.tableWidget.setItem(6, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['valence'])))
+        self.tableWidget.setItem(7, 0, QtWidgets.QTableWidgetItem(emotion_helper.get_mood(self.mood_classifier, self.data[self.current_uri])))
         
         #X,Y coordinate for the dial to move to, based on the current songs valence/energy value, relative to the gradient picture
         x = (self.data[self.current_uri]['valence'] * 250) + self.gradient.x() - self.dial.width()/2
@@ -101,19 +103,7 @@ class MusicGuiProgram(Ui_musicGUI):
         self.label_2.setStyleSheet("QLabel { font: 12pt 'MS Shell Dlg 2'; text-decoration: underline; color: "+ colour_hex +" }")   
         self.tableWidget.setStyleSheet("QTableWidget { gridline-color: "+ colour_hex +" }")
 
-        mood = emotion_helper.get_mood(self.data[self.current_uri])
-        self.change_colour_theme(mood)        
-        # TODO ADD MOOD ITEM TO GUI
-
         return True
-
-    def change_colour_theme(self, mood):
-        if mood == "Happy":
-            pass # TODO SET COLOUR THEME TO HAPPY
-        elif mood == "Sad":
-            pass # TODO SET COLOUR THEME TO SAD
-        else:
-            pass # TODO SET COLOUR THEME TO NEUTRAL
         
     def graph(self):
         emotion_helper.generatePlot(self.data)
