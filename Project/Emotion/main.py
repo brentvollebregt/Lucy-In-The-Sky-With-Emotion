@@ -1,7 +1,6 @@
 import sys, os, emotion_helper
 from PyQt5 import QtCore, QtGui, QtWidgets
 from GUI import Ui_musicGUI
-import json
 from shutil import copyfile
 import csv
 
@@ -124,9 +123,10 @@ class MusicGuiProgram(Ui_musicGUI):
             self.wrtie_to_status("No song selected")
             return
 
-        csv_output = [["number", "title", "artist", "bpm", "energy", "valence", "song_length", "original_file_location"]]
-        csv_output.append([1,
-                           self.data[self.current_uri]['title'],
+        visualiser_assets_folder = os.getcwd() + "/assestfile/" # TODO CHANGE ON FULL MERGE
+
+        csv_output = []
+        csv_output.append([self.data[self.current_uri]['title'],
                            self.data[self.current_uri]['artist'],
                            self.data[self.current_uri]['bpm'],
                            self.data[self.current_uri]['energy'],
@@ -134,14 +134,14 @@ class MusicGuiProgram(Ui_musicGUI):
                            emotion_helper.get_length_of_file(self.data[self.current_uri]['file_location']),
                            self.data[self.current_uri]['file_location']
                            ])
+        copyfile(self.data[self.current_uri]['file_location'], visualiser_assets_folder + "1.mp3")
 
         recSongs = emotion_helper.get_recommended(self.current_uri, self.data)
 
         currentIndex = 1
         for song in recSongs:
             currentIndex += 1
-            csv_output.append([currentIndex,
-                               self.data[song]['title'],
+            csv_output.append([self.data[song]['title'],
                                self.data[song]['artist'],
                                self.data[song]['bpm'],
                                self.data[song]['energy'],
@@ -149,11 +149,7 @@ class MusicGuiProgram(Ui_musicGUI):
                                emotion_helper.get_length_of_file(self.data[song]['file_location']),
                                self.data[song]['file_location']
                                ])
-
-        visualiser_assets_folder = os.getcwd() + "/assestfile/"
-
-        for song in csv_output[1:]:
-            copyfile(song[7], visualiser_assets_folder + str(song[0]) + ".mp3")
+            copyfile(self.data[song]['file_location'], visualiser_assets_folder + str(currentIndex) + ".mp3")
 
         with open("visualiser_data.csv", "w", newline='') as csv_file:
             writer = csv.writer(csv_file)
