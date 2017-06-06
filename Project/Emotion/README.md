@@ -15,9 +15,11 @@ Go to https://developer.spotify.com/my-applications/ and make an app to get your
 ## Requirements
 
 * mutagen (pip install mutagen)
-* pyqt5 (soon)
-* sklearn + numpy (http://scikit-learn.org/stable/install.html)
-* pandas (pip install pandas (With PyPi))
+* pyqt5 (pip install pyqt5)
+* scipy (Get http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy then run 'pip install <package>')
+* numpy+mkl (Get http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy then run 'pip install <package>')
+* sklearn (pip install scikit-learn)
+* pandas (pip install pandas)
 
 ## Authors
 
