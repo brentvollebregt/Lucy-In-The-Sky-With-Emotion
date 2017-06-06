@@ -92,10 +92,15 @@ class MusicGuiProgram(Ui_musicGUI):
         x = self.dial.x() - self.gradient.x() + self.dial.width()/2
         y = self.dial.y() - self.gradient.y() + self.dial.width()/2
         colour = img.pixel(x, y)
-        colour = QtGui.QColor(colour).getRgb()
+        colour_hex = QtGui.QColor(colour).name()
         
-        #change an element to this colour
-        self.tableWidget.item(0,0).setBackground(QtGui.QColor(colour[0],colour[1],colour[2]))
+        #change elements to this colour
+        self.buttonVisual.setStyleSheet("QPushButton { font: 75 14pt 'MS Shell Dlg 2'; border-color: "+ colour_hex +" }")
+        self.buttonGraph.setStyleSheet("QPushButton { font: 75 14pt 'MS Shell Dlg 2'; border-color: "+ colour_hex +" }")
+        self.buttonLoad.setStyleSheet("QPushButton { font: 75 14pt 'MS Shell Dlg 2'; border-color: "+ colour_hex +" }")
+        self.label_3.setStyleSheet("QLabel { font: 12pt 'MS Shell Dlg 2'; text-decoration: underline; color: "+ colour_hex +" }")
+        self.label_2.setStyleSheet("QLabel { font: 12pt 'MS Shell Dlg 2'; text-decoration: underline; color: "+ colour_hex +" }")   
+        self.tableWidget.setStyleSheet("QTableWidget { gridline-color: "+ colour_hex +" }")
 
         mood = emotion_helper.get_mood(self.data[self.current_uri])
         self.change_colour_theme(mood)        
