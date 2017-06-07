@@ -15,6 +15,7 @@ Go to https://developer.spotify.com/my-applications/ and make an app to get your
 ## Requirements
 
 * requests (pip install requests)
+* matplotlib (pip install matplotlib)
 * mutagen (pip install mutagen)
 * pyqt5 (pip install pyqt5)
 * scipy (Get http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy then run 'pip install <package>')
