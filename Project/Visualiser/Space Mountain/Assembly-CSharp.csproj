@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Script\CSVReader.cs" />
      <Compile Include="Assets\Script\CameraSwitch.cs" />
+     <Compile Include="Assets\Script\MoodColorSun.cs" />
      <Compile Include="Assets\Script\Movement.cs" />
      <Compile Include="Assets\Script\OrbitCameraScript.cs" />
      <Compile Include="Assets\Script\Orbits.cs" />

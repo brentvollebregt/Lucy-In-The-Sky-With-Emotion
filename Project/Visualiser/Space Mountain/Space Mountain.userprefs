@@ -1,15 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/FadeOutCamera.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Script/CameraSwitch.cs">
     <Files>
-      <File FileName="Assets/Script/Movement.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/CSVReader.cs" Line="37" Column="24" />
+      <File FileName="Assets/Script/Movement.cs" Line="24" Column="62" />
       <File FileName="Assets/Script/Orbits.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/Colours.cs" Line="1" Column="1" />
       <File FileName="Assets/Script/CameraSwitch.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/OrbitCameraScript.cs" Line="16" Column="29" />
-      <File FileName="Assets/Script/CollisionSparcle.cs" Line="1" Column="1" />
-      <File FileName="Assets/Script/jsonReader.cs" Line="39" Column="9" />
-      <File FileName="Assets/Script/FadeOutCamera.js" Line="11" Column="1" />
+      <File FileName="Assets/Script/OrbitCameraScript.cs" Line="1" Column="1" />
+      <File FileName="Assets/Script/MoodColorSun.cs" Line="22" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
