@@ -73,15 +73,17 @@ class MusicGuiProgram(Ui_musicGUI):
         for song in recSongs:
             self.listWidgetRec.addItem(self.data[song]['title'] + " - " + self.data[song]['artist'])
         
+        length = emotion_helper.get_length_of_file(self.data[self.current_uri]['file_location'])
+        mins, secs = divmod(int(length), 60)
+
         # Show mood in GUI
-        
         self.tableWidget.setItem(0, 0, QtWidgets.QTableWidgetItem(self.data[self.current_uri]['title']))
         self.tableWidget.setItem(1, 0, QtWidgets.QTableWidgetItem(self.data[self.current_uri]['artist']))
         self.tableWidget.setItem(2, 0, QtWidgets.QTableWidgetItem(self.data[self.current_uri]['album']))
-        self.tableWidget.setItem(3, 0, QtWidgets.QTableWidgetItem(str(emotion_helper.get_length_of_file(self.data[self.current_uri]['file_location']))))
-        self.tableWidget.setItem(4, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['bpm'])))
-        self.tableWidget.setItem(5, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['energy'])))
-        self.tableWidget.setItem(6, 0, QtWidgets.QTableWidgetItem(str(self.data[self.current_uri]['valence'])))
+        self.tableWidget.setItem(3, 0, QtWidgets.QTableWidgetItem("%02d:%02d" % (mins, secs)))
+        self.tableWidget.setItem(4, 0, QtWidgets.QTableWidgetItem(str(round(self.data[self.current_uri]['bpm'], 2))))
+        self.tableWidget.setItem(5, 0, QtWidgets.QTableWidgetItem(str(round(self.data[self.current_uri]['energy'], 3))))
+        self.tableWidget.setItem(6, 0, QtWidgets.QTableWidgetItem(str(round(self.data[self.current_uri]['valence'], 3))))
         self.tableWidget.setItem(7, 0, QtWidgets.QTableWidgetItem(emotion_helper.get_mood(self.mood_classifier, self.data[self.current_uri])))
         
         #X,Y coordinate for the dial to move to, based on the current songs valence/energy value, relative to the gradient picture
@@ -152,8 +154,8 @@ class MusicGuiProgram(Ui_musicGUI):
             writer = csv.writer(csv_file)
             writer.writerows(csv_output)
 
-        # TODO ON MERGE Call visualiser
-        print("Yo yo")
+        # TODO os.system("")
+        print("Successfully Called")
 
     def wrtie_to_status(self, message):
         self.status.setText(message)
