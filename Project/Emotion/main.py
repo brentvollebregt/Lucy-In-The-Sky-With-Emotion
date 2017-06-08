@@ -102,9 +102,10 @@ class MusicGuiProgram(Ui_musicGUI):
         self.buttonVisual.setStyleSheet("QPushButton { font: 75 14pt 'MS Shell Dlg 2'; border-color: "+ colour_hex +" }")
         self.buttonGraph.setStyleSheet("QPushButton { font: 75 14pt 'MS Shell Dlg 2'; border-color: "+ colour_hex +" }")
         self.buttonLoad.setStyleSheet("QPushButton { font: 75 14pt 'MS Shell Dlg 2'; border-color: "+ colour_hex +" }")
-        self.label_3.setStyleSheet("QLabel { font: 12pt 'MS Shell Dlg 2'; text-decoration: underline; color: "+ colour_hex +" }")
-        self.label_2.setStyleSheet("QLabel { font: 12pt 'MS Shell Dlg 2'; text-decoration: underline; color: "+ colour_hex +" }")   
+        self.label_3.setStyleSheet("QLabel { font: 16pt 'MS Shell Dlg 2'; color: "+ colour_hex +" }")
+        self.label_2.setStyleSheet("QLabel { font: 16pt 'MS Shell Dlg 2'; color: "+ colour_hex +" }")   
         self.tableWidget.setStyleSheet("QTableWidget { gridline-color: "+ colour_hex +" }")
+        self.line.setStyleSheet("color: "+ colour_hex +" }")
 
         return True
         
