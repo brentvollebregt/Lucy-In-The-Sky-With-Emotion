@@ -119,8 +119,8 @@ class MusicGuiProgram(Ui_musicGUI):
             self.wrtie_to_status("No song selected")
             return
 
-        visualiser_assets_folder = os.getcwd() + "/assestfile/" # TODO CHANGE ON FULL MERGE
-        csv_write_location = os.getcwd() + "/assestfile/" # TODO CHANGE ON FULL MERGE
+        visualiser_assets_folder = os.getcwd() + "/VisualiserFinal/main_Data/StreamingAssets/" # TODO CHANGE ON FULL MERGE
+        csv_write_location = os.getcwd() + "/VisualiserFinal/main_Data/StreamingAssets/" # TODO CHANGE ON FULL MERGE
 
         csv_output = []
         csv_output.append([self.data[self.current_uri]['title'],
@@ -153,9 +153,9 @@ class MusicGuiProgram(Ui_musicGUI):
         with open(csv_write_location + "visualiser_data.csv", "w", newline='') as csv_file:
             writer = csv.writer(csv_file)
             writer.writerows(csv_output)
-
-        # TODO os.system("")
-        print("Successfully Called")
+        print (os.getcwd()+"/VisualiserFinal/main.exe")
+        os.system('"' + os.getcwd()+"/VisualiserFinal/main.exe" + '"')
+        return True
 
     def wrtie_to_status(self, message):
         self.status.setText(message)
