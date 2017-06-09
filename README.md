@@ -12,7 +12,7 @@ The visualiser project can be found at [/Project/Visualiser/](https://github.com
 * [Rhys Compton](https://github.com/basedrhys)
 * [Dylan Exton](https://github.com/DylanExton)
 * [Ryan Le Quesne](https://github.com/ryancomp241)
-* Seattle Tupuhi
+* [Seattle Tupuhi](https://github.com/minionsattle)
 * [Brent Vollebregt](https://github.com/brentvollebregt)
 * [Jack Woods](https://github.com/Woodsy1FD)
 * Rida Zabad
