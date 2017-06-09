@@ -25,12 +25,12 @@ Go to https://developer.spotify.com/my-applications/ and make an app to get your
 2. If using Windows, run install_dependencies.bat. If not using windows, run the pip commands in the bat file. This will install most of the modules.
 3. Install scipy by first dowloading it at http://www.lfd.uci.edu/~gohlke/pythonlibs/#scipy and then running 'pip install <file>'.
 4. Install numpy+mkl by first dowloading it at http://www.lfd.uci.edu/~gohlke/pythonlibs/#numpy and then running 'pip install <file>'.
-5. Copy the folder [/Project/Emotion/](/shash678/COMP241Project/Project/Emotion/) as this is the main project file.
+5. Copy the folder [/Project/Emotion/](https://github.com/shash678/COMP241Project/blob/master/Project/Emotion/) as this is the main project file.
 6. If wanting to rebuild the visualiser, rebuild and edit the paths in the following files:
-	* Lines [122 and 123](/shash678/COMP241Project/blob/master/Project/Emotion/main.py#L122-L133) to the locations of the desired output (122 for song files and 123 for the CSV file)
-	* Lines [156 and 157](/shash678/COMP241Project/blob/master/Project/Emotion/main.py#L156-L157) to the executabe to star the visualiser
+	* Lines [122 and 123](https://github.com/shash678/COMP241Project/blob/master/Project/Emotion/main.py#L122-L123) to the locations of the desired output (122 for song files and 123 for the CSV file)
+	* Lines [156 and 157](https://github.com/shash678/COMP241Project/blob/master/Project/Emotion/main.py#L156-L157) to the executabe to star the visualiser
 7. Read about issues
-8. Run [main.py](/shash678/COMP241Project/Project/Emotion/main.py)
+8. Run [main.py](https://github.com/shash678/COMP241Project/blob/master/Project/Emotion/main.py)
 
 If you have any issues, feel free to contact Brent.
 
@@ -39,9 +39,9 @@ Currently the visualiser cannot take in dynamic input for audio. CSV files are s
 
 This means music that was used in the building of the visualiser will be the only audio that the vislaiser plays, however the data that the visualiser reads from the CSV to manipulate some functions will still be used.
 
-More information of this can be found [here](/shash678/COMP241Project/Project/Visualiser/).
+More information of this can be found [here](https://github.com/shash678/COMP241Project/tree/master/Project/Visualiser).
 
-To temprarily fix this so incorrect data is not displayed can be easily fixed by commenting out lines [153 to 155 in main.py](/shash678/COMP241Project/blob/master/Project/Emotion/main.py#L153-L155). This will disable the CSV wrting so the original CSV file will still be passing the correct data.
+To temprarily fix this so incorrect data is not displayed can be easily fixed by commenting out lines [153 to 155 in main.py](https://github.com/shash678/COMP241Project/blob/master/Project/Emotion/main.py#L153-L155). This will disable the CSV wrting so the original CSV file will still be passing the correct data.
 
 ## Authors
 * Dylan Exton: Background code
