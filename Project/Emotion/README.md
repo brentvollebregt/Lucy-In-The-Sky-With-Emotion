@@ -2,6 +2,7 @@
 
 ## Settings.json
 Remember to edit settings.json
+
 Go to https://developer.spotify.com/my-applications/ and make an app to get your keys as we are not allowed to distribute our own keys.
 
 ## Layout
@@ -35,8 +36,11 @@ If you have any issues, feel free to contact Brent.
 
 ## Issues
 Currently the visualiser cannot take in dynamic input for audio. CSV files are still read in dynamically and will change based on what song is selected when the visualise button is clicked.
+
 This means music that was used in the building of the visualiser will be the only audio that the vislaiser plays, however the data that the visualiser reads from the CSV to manipulate some functions will still be used.
+
 More information of this can be found [here](/shash678/COMP241Project/Project/Visualiser/).
+
 To temprarily fix this so incorrect data is not displayed can be easily fixed by commenting out lines [153 to 155 in main.py](/shash678/COMP241Project/blob/master/Project/Emotion/main.py#L153-L155). This will disable the CSV wrting so the original CSV file will still be passing the correct data.
 
 ## Authors

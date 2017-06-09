@@ -1,8 +1,11 @@
 # Lucy In The Sky With Emotion
 COMP241 project for visualizing emotions from songs
-For instructions on how to run this project, go to [/shash678/COMP241Project/Project/Emotion/](/Project/Emotion/)
-The emotion project can be found at [/Project/Emotion/](/shash678/COMP241Project/Project/Emotion/). This contains the python files to run the emotion side and a built verison of the visualiser.
-The visualiser project can be found at [/Project/Visualiser/](/shash678/COMP241Project/Project/Visualiser/). This contains the necessary files to build the visualiser in unity
+
+For instructions on how to run this project, go to [/Project/Emotion/](https://github.com/shash678/COMP241Project/Project/Emotion/)
+
+The emotion project can be found at [/Project/Emotion/](https://github.com/shash678/COMP241Project/Project/Emotion/). This contains the python files to run the emotion side and a built verison of the visualiser.
+
+The visualiser project can be found at [/Project/Visualiser/](https://github.com/shash678/COMP241Project/Project/Visualiser/). This contains the necessary files to build the visualiser in unity
 
 ## Authors
 * Naaish Ahmed
