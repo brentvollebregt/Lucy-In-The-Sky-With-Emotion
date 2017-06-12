@@ -25,7 +25,7 @@ sp.trace=False
 
 
 
-def import_from_dir(directory): # Complete and tested - Brent
+def import_from_dir(directory):
     """
     Args:
         directory: string of directory to be searched
@@ -39,7 +39,7 @@ def import_from_dir(directory): # Complete and tested - Brent
                 songs.append({'file_location': os.path.join(root, name)})
     return songs
 
-def get_tags(song): # Complete and tested - Brent
+def get_tags(song):
     """
     Args:
         song: dictionary of song
@@ -54,7 +54,7 @@ def get_tags(song): # Complete and tested - Brent
     song['album'] = audio['TALB'].text[0]
     return song
 
-def get_uri(song): # Complete and tested - Brent (ft. and dupe artist in the tags can get screwed)
+def get_uri(song):
     """
     Args:
         song: dictionary of song
@@ -72,13 +72,13 @@ def get_uri(song): # Complete and tested - Brent (ft. and dupe artist in the tag
             return None
     return song
 
-def int_index_to_uri_index(songs): # Complete and tested - Brent
+def int_index_to_uri_index(songs):
     converted = {}
     for i in songs:
         converted[i['uri']] = i
     return converted
 
-def get_spotify_data(songs): # Complete and tested - Brent
+def get_spotify_data(songs):
     """
     Args:
         songs: list of dictionaries of songs indexed by uri
@@ -108,7 +108,7 @@ def get_mood(mood_classifier, song): # Jack
         mood = "Sad"
     return mood # Return either "Happy", "Sad" or "Neutral"
 
-def get_recommended(uri, songs): # Complete and tested - Dylan
+def get_recommended(uri, songs):
     """
     Args:
         uri: uri of the focus song (string)
@@ -144,7 +144,7 @@ def get_recommended(uri, songs): # Complete and tested - Dylan
 
     return reccomended_songs
 
-def get_length_of_file(location): # Complete and tested - Brent
+def get_length_of_file(location):
     """
     Args:
         location: location of a MP3
