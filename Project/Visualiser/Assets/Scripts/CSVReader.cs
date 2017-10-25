@@ -19,7 +19,7 @@ public class CSVReader : MonoBehaviour {
         songs_ = new List<Song>();
         source.clip = (AudioClip)Resources.Load("1");
         source.Play();
-		StreamReader cvsText = new StreamReader(Application.streamingAssetsPath + "/visualiser_data.csv");
+		StreamReader cvsText = new StreamReader(new FileStream(Application.streamingAssetsPath + "/visualiser_data.csv", FileMode.Open));
 		while ((songData_ = cvsText.ReadLine ()) != null) {
 			string[] words = songData_.Split(',');
 			songs_.Add (new Song (words[0],words[1], double.Parse(words[2]),double.Parse(words[3]),double.Parse(words[4]),double.Parse(words[5]),words[6],words[7]));
