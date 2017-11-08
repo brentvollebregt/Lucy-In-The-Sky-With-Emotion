@@ -98,7 +98,12 @@ public class SplineController : MonoBehaviour
 		if (SplineRoot != null)
 		{
 			List<Component> components = new List<Component>(SplineRoot.GetComponentsInChildren(typeof(Transform)));
-			List<Transform> transforms = components.ConvertAll(c => (Transform)c);
+            //List<Transform> transforms = components.ConvertAll(c => (Transform)c);
+            List<Transform> transforms = new List<Transform>();
+            foreach (Component c in components)
+            {
+                transforms.Add((Transform)c);
+            }
 
 			transforms.Remove(SplineRoot.transform);
 			transforms.Sort(delegate(Transform a, Transform b)

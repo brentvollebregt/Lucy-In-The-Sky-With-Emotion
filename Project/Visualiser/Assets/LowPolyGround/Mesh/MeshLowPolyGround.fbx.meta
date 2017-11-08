@@ -1,0 +1,218 @@
+fileFormatVersion: 2
+guid: 62a1903fd3708d7499742985e02168a7
+timeCreated: 1461107668
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: aros
+    100002: Cube
+    100004: Displacer
+    100006: Displacer_1
+    100008: //RootNode
+    100010: Manzana
+    100012: Manzana_2
+    100014: Palos
+    100016: Palos_10
+    100018: Palos_11
+    100020: Palos_12
+    100022: Palos_2
+    100024: Palos_3
+    100026: Palos_4
+    100028: Palos_5
+    100030: Palos_6
+    100032: Palos_7
+    100034: Palos_8
+    100036: Palos_9
+    100038: PalosValde
+    100040: Polygon_Reduction
+    100042: Sphere
+    100044: Sphere_1
+    100046: Sphere_2
+    100048: Sphere_3
+    100050: Sphere_4
+    100052: Sphere_5
+    100054: SueloVerde
+    100056: Tierra
+    100058: Tree
+    100060: Tube001
+    100062: Tube002
+    100064: Tube003
+    100066: valde
+    400000: aros
+    400002: Cube
+    400004: Displacer
+    400006: Displacer_1
+    400008: //RootNode
+    400010: Manzana
+    400012: Manzana_2
+    400014: Palos
+    400016: Palos_10
+    400018: Palos_11
+    400020: Palos_12
+    400022: Palos_2
+    400024: Palos_3
+    400026: Palos_4
+    400028: Palos_5
+    400030: Palos_6
+    400032: Palos_7
+    400034: Palos_8
+    400036: Palos_9
+    400038: PalosValde
+    400040: Polygon_Reduction
+    400042: Sphere
+    400044: Sphere_1
+    400046: Sphere_2
+    400048: Sphere_3
+    400050: Sphere_4
+    400052: Sphere_5
+    400054: SueloVerde
+    400056: Tierra
+    400058: Tree
+    400060: Tube001
+    400062: Tube002
+    400064: Tube003
+    400066: valde
+    2300000: Cube
+    2300002: Manzana_2
+    2300004: Palos
+    2300006: Palos_10
+    2300008: Palos_11
+    2300010: Palos_12
+    2300012: Palos_2
+    2300014: Palos_3
+    2300016: Palos_4
+    2300018: Palos_5
+    2300020: Palos_6
+    2300022: Palos_7
+    2300024: Palos_8
+    2300026: Palos_9
+    2300028: Sphere
+    2300030: Sphere_1
+    2300032: Sphere_2
+    2300034: Sphere_3
+    2300036: Sphere_4
+    2300038: Sphere_5
+    2300040: SueloVerde
+    2300042: Tierra
+    2300044: Tube001
+    2300046: Tube002
+    2300048: Tube003
+    3300000: Cube
+    3300002: Manzana_2
+    3300004: Palos
+    3300006: Palos_10
+    3300008: Palos_11
+    3300010: Palos_12
+    3300012: Palos_2
+    3300014: Palos_3
+    3300016: Palos_4
+    3300018: Palos_5
+    3300020: Palos_6
+    3300022: Palos_7
+    3300024: Palos_8
+    3300026: Palos_9
+    3300028: Sphere
+    3300030: Sphere_1
+    3300032: Sphere_2
+    3300034: Sphere_3
+    3300036: Sphere_4
+    3300038: Sphere_5
+    3300040: SueloVerde
+    3300042: Tierra
+    3300044: Tube001
+    3300046: Tube002
+    3300048: Tube003
+    4300000: SueloVerde
+    4300002: Tierra
+    4300004: Sphere_5
+    4300006: Sphere_4
+    4300008: Sphere_3
+    4300010: Sphere_2
+    4300012: Sphere_1
+    4300014: Sphere
+    4300016: Cube
+    4300018: Manzana_2
+    4300020: Tube003
+    4300022: Tube002
+    4300024: Tube001
+    4300026: Palos
+    4300028: Palos_2
+    4300030: Palos_3
+    4300032: Palos_4
+    4300034: Palos_5
+    4300036: Palos_6
+    4300038: Palos_7
+    4300040: Palos_8
+    4300042: Palos_9
+    4300044: Palos_10
+    4300046: Palos_11
+    4300048: Palos_12
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 0
+    normalImportMode: 1
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

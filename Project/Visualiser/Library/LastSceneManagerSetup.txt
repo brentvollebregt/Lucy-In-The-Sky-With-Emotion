@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/HoloScene.unity
+- path: Assets/Scenes/Hololens.unity
   isLoaded: 1
   isActive: 1
