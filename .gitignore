@@ -37,3 +37,9 @@ sysinfo.txt
 *.unitypackage
 
 # End of https://www.gitignore.io/api/unity
+
+# JetBrains
+.idea/
+
+# Python Compiled
+*.pyc

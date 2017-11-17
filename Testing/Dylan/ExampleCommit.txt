@@ -1,3 +1,0 @@
-The quick brown fox jumps over the lazy dog.
-
-This is a test commit, is it advised to use Atom to do some of the programming required??
