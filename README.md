@@ -51,7 +51,7 @@ Go to https://developer.spotify.com/my-applications/ and make an app to get your
 5. Copy the folder [/Emotion/](https://github.com/shash678/COMP241Project/blob/master/Emotion/) as this is the main project file.
 6. Build the visualiser and edit the paths in the following files in main.py:
 	* Lines [123 and 125](https://github.com/shash678/COMP241Project/blob/master/Emotion/main.py#L122-L125) to the locations of the desired output (123 for song files and 125 for the CSV file)
-	* Line [156](https://github.com/shash678/COMP241Project/blob/master/Emotion/main.py#L158) to the executabe to star the visualiser
+	* Line [156](https://github.com/shash678/COMP241Project/blob/master/Emotion/main.py#L159) to the executabe to star the visualiser
 7. Read about issues
 8. Run [main.py](https://github.com/shash678/COMP241Project/blob/master/Emotion/main.py)
 
@@ -62,7 +62,7 @@ Currently the visualiser cannot take in dynamic input for audio. CSV files are s
 
 This means music that was used in the building of the visualiser will be the only audio that the vislaiser plays, however the data that the visualiser reads from the CSV to manipulate some functions will still be used.
 
-To temprarily fix this so incorrect data is not displayed can be easily fixed by commenting out lines [153 to 155 in main.py](https://github.com/shash678/COMP241Project/blob/master/Emotion/main.py#L153-L155). This will disable the CSV wrting so the original CSV file will still be passing the correct data.
+To temprarily fix this so incorrect data is not displayed can be easily fixed by commenting out lines [153 to 155 in main.py](https://github.com/shash678/COMP241Project/blob/master/Emotion/main.py#L155-L157). This will disable the CSV wrting so the original CSV file will still be passing the correct data.
 
 # Visualisation of Music
 Instructions need to be added
